@@ -1,0 +1,19 @@
+/* pages/assignments/assignments.wxss */
+
+.heading {
+  text-align: center;
+   margin: 10px; 
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  top: 0%; 
+}
+
+.btn {
+  width: 200px;
+  border-radius: 20%;
+  height: 60px; 
+}
+
+#color {
+  background-color: red;
+}
