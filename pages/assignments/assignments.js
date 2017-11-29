@@ -1,66 +1,69 @@
 // pages/assignments/assignments.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    assignment: null,
+    content: null,
+    voice: null
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function (options) {
-  
+    var that = this
+    var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments/'
+    wx.request({
+      // this part is not yet dynamic
+      url: endpoint + 1,
+      header: { 'content-type': 'application/json' },
+      success: function (res) {
+        // res contains all the HTTP request data
+        console.log('success!' + res.statusCode);
+        console.log(res.data);
+        // Update local data storage
+        let assign = res.data
+        that.setData({
+           content: assign.content,
+           voice: assign.voice
+        })
+      },
+      fail: function (res) {
+        console.log(res.data);
+        console.log('failed!' + res.statusCode);
+      },
+      complete: function (res) {
+        console.log(res.data);
+        console.log('completed!' + res.statusCode);
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
   onReady: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
+
   onShow: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
+
   onHide: function () {
-  
+
   },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
   onUnload: function () {
-  
+
   },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
+
   onPullDownRefresh: function () {
-  
+
   },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
   onReachBottom: function () {
-  
+
   },
 
-  /**
-   * 用户点击右上角分享
-   */
   onShareAppMessage: function () {
-  
+
   }
 })
