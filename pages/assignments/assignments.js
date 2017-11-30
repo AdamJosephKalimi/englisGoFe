@@ -9,7 +9,7 @@ Page({
 
   onLoad: function (options) {
     var that = this
-    var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments/'
+    var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments/index'
     wx.request({
       // this part is not yet dynamic
       url: endpoint + 1,
