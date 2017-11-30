@@ -1,9 +1,8 @@
-//pages/assignments/assignments.js
 var filePath;
 var timeStop = false;
-const qiniuUploader = require("../../utils/qiniuUploader-min.js");
+const AV = require('../../utils/av-weapp-min.js');
 const Form = require('../../model/form.js');
-var app = getApp();
+var app = getApp()
 
 Page({
   data: {
@@ -11,15 +10,7 @@ Page({
     content: null,
     voice: null
   },
-  initQiniu: function () {
-  var options = {
-    region: 'ECN',
-    uptokenURL: 'https://.../api/upToken',
-    domain: 'http://p081eha2e.bkt.clouddn.com',
-    shouldUseQiniuFileName: false
-  };
-  qiniuUploader.init(options);
-  },
+
   startRecording: function () {
     wx.startRecord({
       success: function (res) {
@@ -47,8 +38,8 @@ Page({
 
   onLoad: function (options) {
     var that = this
-    var id = 1
-    var endpoint = `https://english-go.herokuapp.com/api/v1/assignments/#{id}`
+    var id = options.assignment
+    var endpoint = `https://english-go.herokuapp.com/api/v1/assignments/${id}`
     wx.request({
       url: endpoint,
       header: { 'content-type': 'application/json' },
@@ -57,10 +48,10 @@ Page({
         console.log('success!' + res.statusCode);
         console.log(res.data);
         // Update local data storage
-        let assign = res.data
+        let assignment = res.data
         that.setData({
-           content: assign.content,
-           voice: assign.voice
+           content: assignment.content,
+           voice: assignment.voice
         })
       },
       fail: function (res) {
@@ -111,6 +102,16 @@ Page({
       duration: 1500
     })
 
+    // LEANCLOUD PERMISSIONS
+    let acl = new AV.ACL();
+    acl.setPublicReadAccess(true);
+    acl.setPublicWriteAccess(true);
+
+    // leancloud storage
+    new Form({
+        voice: voice,
+        content: content
+    }).setACL(acl).save().catch(console.error);
 
     // redirect
     wx.reLaunch({

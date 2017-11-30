@@ -1,5 +1,9 @@
 //index.js
-//获取应用实例
+const AV = require('../../utils/av-weapp-min.js');
+AV.init({
+  appId: 'HxMi8SYL5ztOC5fRK2wFWqfs-gzGzoHsz',
+  appKey: 'IftSXyfYA9yzzufxGypFnuVW',
+});
 const app = getApp()
 
 Page({

@@ -1,4 +1,4 @@
-const AV = require('../utils/qiniuUploader-min.js');
+const AV = require('../utils/av-weapp-min.js');
 
 class Form extends AV.Object {
 }

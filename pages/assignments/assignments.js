@@ -1,8 +1,11 @@
 // pages/assignments/assignments.js
+const AV = require('../../utils/av-weapp-min.js');
+const Form = require('../../model/form.js');
+var app = getApp()
 Page({
 
   data: {
-    assignment: null,
+    assignments: null,
     content: null,
     voice: null
   },
@@ -21,7 +24,7 @@ Page({
         // Update local data storage
         let list = res.data
         that.setData({
-           assignment_id: list.id,
+           assignments: list
         })
       },
       fail: function (res) {
@@ -35,6 +38,13 @@ Page({
     })
   },
 
+  handleCardTap: function(event) {
+    console.log(event)
+    let id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `../form/form?assignment=${id}`
+    })
+  },
   // onReady: function () {
   //   new AV.Query('Form')
   //     .descending('createdAt')

@@ -1,4 +1,7 @@
 //app.js
+const AV = require('utils/av-weapp-min.js');
+const Form = require('model/form.js');
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
