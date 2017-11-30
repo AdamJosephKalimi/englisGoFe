@@ -9,10 +9,10 @@
           <button class="weui-btn" type="primary">Challenges</button>
   </view>
   <view class="page__bd page__bd_spacing">
-          <button class="weui-btn" type="primary">Leisure</button>
+          <button class="weui-btn" type="primary" id='color'>Leisure</button>
   </view>
   <view class="page__bd page__bd_spacing">
-          <button class="weui-btn" type="primary" id='color'>Childhood</button>
+          <button class="weui-btn" type="primary" disabled="true">Childhood</button>
   </view>
   <view class="page__bd page__bd_spacing">
           <button class="weui-btn" type="primary" disabled="true">Friendship</button>
@@ -36,11 +36,7 @@
           <button class="weui-btn" type="primary" disabled="true">Food</button> 
   </view>
   <view class="page__bd page__bd_spacing">
-          <button class="weui-btn" type="primary"  disabled="true">Family</button> 
+          <button class="weui-btn" type="primary" disabled="true">Family</button> 
   </view>
+</view>
 
-  <!-- <button class="weui-btn" type="primary" disabled="true">页面主操作 Disabled</button>
-
-  <button class="weui-btn" type="default">页面次要操作 Normal</button>
-        <button class="weui-btn" type="default" disabled="true">页面次要操作 Disabled</button>   -->
- </view>
