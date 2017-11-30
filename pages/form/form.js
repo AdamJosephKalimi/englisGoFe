@@ -1,7 +1,7 @@
 //pages/assignments/assignments.js
 var filePath;
 var timeStop = false;
-const qiniuUploader = require("../../../utils/qiniuUploader");
+const qiniuUploader = require("../../utils/qiniuUploader-min.js");
 const Form = require('../../model/form.js');
 var app = getApp();
 
@@ -10,6 +10,15 @@ Page({
     assignment: null,
     content: null,
     voice: null
+  },
+  initQiniu: function () {
+  var options = {
+    region: 'ECN',
+    uptokenURL: 'https://.../api/upToken',
+    domain: 'http://p081eha2e.bkt.clouddn.com',
+    shouldUseQiniuFileName: false
+  };
+  qiniuUploader.init(options);
   },
   startRecording: function () {
     wx.startRecord({
@@ -90,7 +99,6 @@ Page({
     })
   },
 
-
   bindFormSubmit: function(e){
 
     this.setData({
@@ -103,20 +111,6 @@ Page({
       duration: 1500
     })
 
-    // local - needs to accord with voice
-    let voice = e.value.voice
-    let content = e.value.content
-
-    // LEANCLOUD PERMISSIONS
-    let acl = new AV.ACL();
-    acl.setPublicReadAccess(true);
-    acl.setPublicWriteAccess(true);
-
-    // leancloud storage
-    new Form({
-        voice: voice,
-        content: content
-    }).setACL(acl).save().catch(console.error);
 
     // redirect
     wx.reLaunch({
