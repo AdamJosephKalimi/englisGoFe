@@ -8,15 +8,22 @@
   <view class="page__bd page__bd_spacing">
     <view class="weui-flex">
       <view class="weui-flex__item">
-        <view class="placeholder">(dynamic box to show assignments)</view>
+        <view class="placeholder">(dynamic box to show assignments)
+        <text>{{assign.content}}</text>
+        </view>
       </view>
     </view> 
   </view>  
   <view>
-    <text>A sample answer to this question</text>
+    <text>A sample answer</text>
+    # This will call content from the db
+    <text>{{assign.voice}}</text>
   </view>
   <view>
-    <button class="weui-btn" type="primary">mic</button>
+  <button bindtap="startRecording">Start</button>
+  <button bindtap="stopRecording">Stop</button>
+  <button bindtap="playRecording">Play</button>
+  <button bindtap="playRecording">Save</button>
   </view>  
   <view>
     <text>Tap to hear your student's answer</text>
