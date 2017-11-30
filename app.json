@@ -1,11 +1,12 @@
 {
   "pages": [
-    "pages/form/form",
-    "pages/components/various",
     "pages/assignments/assignments",
+    "pages/components_1/buttons",
+    "pages/form/form",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/index/index",
     "pages/logs/logs"
+   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -14,3 +15,6 @@
     "navigationBarTextStyle": "black"
   }
 }
+
+
+ 

@@ -1,5 +1,6 @@
 // pages/components/various.js
 Page({
+
   data: {
     showTopTips: false,
 
