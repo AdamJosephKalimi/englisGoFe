@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/form/form",
-    "pages/components/various",
+    "pages/components/switch_slider",
     "pages/assignments/assignments",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/index/index",
