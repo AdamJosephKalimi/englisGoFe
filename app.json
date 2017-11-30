@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/landing_page/landing_page",
+    "pages/teacher_registration_submission_form/teacher_registration_submission_form",
     "pages/form/form",
+    "pages/teacher_student_select/teacher_student_select",
+    "pages/landing_page/landing_page",
     "pages/assignments/assignments",
     "pages/components_1/buttons",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/index/index",
+    
     "pages/logs/logs"
   ],
   "window": {
