@@ -9,20 +9,19 @@ Page({
 
   onLoad: function (options) {
     var that = this
-    var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments/index'
+    // this provides the index of all assignments
+    var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments'
     wx.request({
-      // this part is not yet dynamic
-      url: endpoint + 1,
+      url: endpoint,
       header: { 'content-type': 'application/json' },
       success: function (res) {
         // res contains all the HTTP request data
         console.log('success!' + res.statusCode);
         console.log(res.data);
         // Update local data storage
-        let assign = res.data
+        let list = res.data
         that.setData({
-           content: assign.content,
-           voice: assign.voice
+           assignment_id: list.id,
         })
       },
       fail: function (res) {
