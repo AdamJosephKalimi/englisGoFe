@@ -16,7 +16,7 @@
   </view>  
   <view>
     <text>A sample answer</text>
-    # This will call content from the db
+    <!-- This will call content from the db -->
     <text>{{assign.voice}}</text>
   </view>
   <view>
