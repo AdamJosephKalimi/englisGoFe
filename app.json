@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/teacher_student_register/teacher_student_register",
     "pages/landing_page/landing_page",
     "pages/form/form",
     "pages/assignments/assignments",
@@ -7,6 +8,7 @@
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/index/index",
     "pages/logs/logs"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
