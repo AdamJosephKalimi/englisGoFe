@@ -14,7 +14,9 @@
     </view>
   </view>
   <view>
+
     <text>{{voice}}</text>
+
   </view>
   <view>
   <button bindtap="startRecording">Start</button>

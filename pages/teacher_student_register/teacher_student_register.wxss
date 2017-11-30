@@ -1,11 +1,12 @@
-/* pages/assignments/assignments.wxss */
+/* pages/teacher_student_register/teacher_student_register.wxss */
+
 .assignments {
   padding: 0;
 }
 .heading {
   text-align: center;
-  margin: 70px; 
-  font-size: 45px;
+  margin: 100px; 
+  font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   /* Import Avenir Next  */
 }
@@ -21,8 +22,3 @@
 #color {
   background-color: firebrick;
 }
-
-/* Rectangle 3: */
-/* background: #1CAE32;
-
-border-radius: 8px; */
