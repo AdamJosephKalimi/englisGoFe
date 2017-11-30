@@ -1,5 +1,4 @@
-/* pages/landing_page/landing_page.wxss */
-
+/* pages/teacher_student_register/teacher_student_register.wxss */
 
 .assignments {
   padding: 0;
