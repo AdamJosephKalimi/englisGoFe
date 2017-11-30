@@ -1,18 +1,18 @@
 {
   "pages": [
+    "pages/student_post_placement_test/student_post_placement_test",
     "pages/student_placement_test/student_placement_test",
     "pages/assignments/assignments",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/form/form",
-    
     "pages/student_pre_test/student_pre_test",
-"pages/teacher_registration_submission_form/teacher_registration_submission_form",
+    "pages/teacher_registration_submission_form/teacher_registration_submission_form",
     "pages/teacher_student_select/teacher_student_select",
     "pages/landing_page/landing_page",
     "pages/components_1/buttons",
     "pages/index/index",
-    "pages/logs/logs"
-
+    "pages/logs/logs",
+    "pages/teacher_post_register/teacher_post_register"
   ],
   "window": {
     "backgroundTextStyle": "light",
