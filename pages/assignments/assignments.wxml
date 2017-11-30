@@ -1,42 +1,46 @@
-<view class="container">
+<view class="assignments container">
   
   <text class="heading">Assignments</text>
-  
-  <view class="btn">
-    <button type="primary" form-type="submit">Family</button>
+
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Motivation</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Food</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Challenges</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit" id='color'>Movies</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Leisure</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Traveling</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Childhood</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Fitness</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Friendship</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Education</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Sports</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Sports</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Education</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Friendship</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Fitness</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Childhood</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Traveling</button>
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Leisure</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Movies</button>      
+  </view>  
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Food</button> 
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Challenges</button>
+  <view class="page__bd page__bd_spacing">
+          <button class="weui-btn" type="primary">Family</button> 
   </view>
-  <view class="btn">
-    <button type="primary" form-type="submit">Motivation</button>
-  </view>
-  
+
+  <button class="weui-btn" type="primary" disabled="true">页面主操作 Disabled</button>
+
+  <button class="weui-btn" type="default">页面次要操作 Normal</button>
+        <button class="weui-btn" type="default" disabled="true">页面次要操作 Disabled</button>
 </view>
