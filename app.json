@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/landing_page/landing_page",
+    "pages/form/form",
     "pages/assignments/assignments",
     "pages/components_1/buttons",
-    "pages/form/form",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/index/index",
     "pages/logs/logs"
-   
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,6 +15,3 @@
     "navigationBarTextStyle": "black"
   }
 }
-
-
- 
