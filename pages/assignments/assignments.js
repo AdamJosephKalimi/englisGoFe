@@ -35,8 +35,21 @@ Page({
     })
   },
 
-  onReady: function () {
+  // onReady: function () {
+  //   new AV.Query('Form')
+  //     .descending('createdAt')
+  //     .find()
+  //     .then(forms => this.setData({ forms }))
+  //     .catch(console.error);
+  // },
 
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    })
   },
 
 

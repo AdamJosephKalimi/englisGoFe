@@ -1,8 +1,11 @@
 //pages/assignments/assignments.js
 var filePath;
 var timeStop = false;
+const qiniuUploader = require("../../../utils/qiniuUploader");
+const Form = require('../../model/form.js');
+var app = getApp();
 
-Page({  
+Page({
   data: {
     assignment: null,
     content: null,
@@ -61,36 +64,64 @@ Page({
       }
     })
   },
-
-  onReady: function () {
-
+  //上传录音
+  uploadVoice: function(){
+    //调用微信的上传录音接口把本地录音先上传到微信的服务器
+    //不过，微信只保留3天，而我们需要长期保存，我们需要把资源从微信服务器下载到自己的服务器
+    wx.uploadVoice({
+        localId: voice.localId, // 需要上传的音频的本地ID，由stopRecord接口获得
+        isShowProgressTips: 1, // 默认为1，显示进度提示
+        success: function (res) {
+            //把录音在微信服务器上的id（res.serverId）发送到自己的服务器供下载
+            filePath = res.tempFilePaths[0];
+            qiniuUploader.upload(filePath, (res) => {
+              that.setData({
+                voice : res.voice,
+              });
+            })
+          }
+        }
+    );
+    //注册微信播放录音结束事件【一定要放在wx.ready函数内】
+    wx.onVoicePlayEnd({
+      success: function (res) {
+          stopWave();
+      }
+    })
   },
 
 
-  onShow: function () {
+  bindFormSubmit: function(e){
 
-  },
+    this.setData({
+      loading: !this.data.loading
+    })
 
+    wx.showToast({
+      title: 'Sending :P',
+      icon: 'loading',
+      duration: 1500
+    })
 
-  onHide: function () {
+    // local - needs to accord with voice
+    let voice = e.value.voice
+    let content = e.value.content
 
-  },
+    // LEANCLOUD PERMISSIONS
+    let acl = new AV.ACL();
+    acl.setPublicReadAccess(true);
+    acl.setPublicWriteAccess(true);
 
-  onUnload: function () {
+    // leancloud storage
+    new Form({
+        voice: voice,
+        content: content
+    }).setACL(acl).save().catch(console.error);
 
-  },
-
-
-  onPullDownRefresh: function () {
-
-  },
-
-  onReachBottom: function () {
-
-  },
-
-  onShareAppMessage: function () {
-
+    // redirect
+    wx.reLaunch({
+      url: '/pages/index/index?form=1'
+    })
   }
 })
 
