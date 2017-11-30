@@ -1,17 +1,13 @@
 <!--pages/student_pre_test/student_pre_test.wxml-->
-<text>Welcome to EnglishGo.
-(Chinese)
-Practice your spoken English. 
-(Chinese)
-Get feedback from a 
-(Chinese)
-Native English Speaker.
-(Chinese)
-Lower the barrier to persistence
-(Chinese)
-with practice sessions 
-(Chinese)
-using real life topics of conversation</text>
-<view class="page__bd page__bd_spacing">
-    <button class="weui-btn" type="primary">Test your English</button>
+<text>Thank you for applying!
+We’ll get back to you in 
+less than 24 hours to
+confirm a time to chat.
+
+In the meantime, take a 
+look at this link to find out 
+more about teaching with
+EnglishGo!</text>
+<view>
+  <text>(EnglishGo77 Logo will go here)</text>
 </view>
