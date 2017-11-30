@@ -1,5 +1,10 @@
 {
   "pages": [
+<<<<<<< HEAD
+=======
+    "pages/form/form",
+    "pages/components/switch_slider",
+>>>>>>> form_development
     "pages/assignments/assignments",
     "pages/components_1/buttons",
     "pages/form/form",
