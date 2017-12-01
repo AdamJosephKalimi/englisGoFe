@@ -1,7 +1,8 @@
 {
   "pages": [
-  "pages/assignments/assignments",
-  "pages/teacher_student_select/teacher_student_select","pages/teacher_registration_submission_form/teacher_registration_submission_form",
+    "pages/teacher_student_select/teacher_student_select",
+    "pages/assignments/assignments",
+    "pages/teacher_registration_submission_form/teacher_registration_submission_form",
     
     "pages/student_pre_test/student_pre_test",
 "pages/student_post_placement_test/student_post_placement_test",

@@ -1,19 +1,23 @@
 <!--pages/student_placement_test/student_placement_test.wxml-->
 <view class="page">
   <view class="page__hd">
-    <view class="page__title">Assignment(Title)</view>
+    <view class="page__title">Choose the best answer</view>
   </view>
   <view class="page__bd page__bd_spacing">
     <view class="weui-flex">
       <view class="weui-flex__item">
-        <view class="placeholder">(Mutliple choice test)
+        <view class="placeholder">(1. Yesterday I ______ to Le Wagon.
+        A. go
+        B. went
+        C. am going
+        D. code)
         <text>{{assign.content}}</text>
         </view>
       </view>
     </view> 
   </view>  
   <view>
-    <text>A sample answer</text>
+    <text>Tell us about your favorite place! Use as much detail as possible. Tap the button below to start recording yourself. Tap again once you're done.告诉我们你最喜欢的地方！ 尽可能多地使用细节。 点击下面的按钮开始录制自己。 一旦你完成，再次点击。</text>
     <!-- This will call content from the db -->
     <text>{{assign.voice}}</text>
   </view>
