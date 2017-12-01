@@ -41,6 +41,7 @@ Page({
   handleCardTap: function(event) {
     console.log(event)
     let id = event.currentTarget.dataset.id
+    console.log(id)
     wx.navigateTo({
       url: `../form/form?assignment=${id}`
     })
