@@ -2,11 +2,10 @@
 
 <view class="assignments container">
  <view class="page__bd page__bd_spacing">
-    <button class="weui-btn" type="primary">Register as Student</button>
+    <button bindtap='pushStudent' url="pages/student_pre_test/student_pre_test" class="weui-btn" type="primary">Register as Student</button>
   </view>
   <text class="heading">EnglishGo77</text>
   <view class="page__bd page__bd_spacing">
-    <button class="weui-btn" type="primary">Register as Teacher</button>
+    <button bindtap='pushTeacher' class="weui-btn" type="primary">Register as Teacher</button>
   </view>
 </view>
-

@@ -30,7 +30,7 @@
     <button class="weui-btn" type="primary">mic icon</button>
   </view>  
   <view class="page__bd page__bd_spacing">
-    <button class="btn" type="primary">Submit</button>
+    <button bindtap='toStudentPostTest' url="pages/student_pre_test/student_pre_test" class="submit-btn" type="primary">Submit</button>
   </view>
 </view>
 
