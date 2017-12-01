@@ -90,7 +90,7 @@ Page({
     })
   },
 
-  bindFormSubmit: function(e){
+  bindFormSubmission: function(event){
 
     this.setData({
       loading: !this.data.loading
@@ -109,9 +109,15 @@ Page({
 
     // leancloud storage
     new Form({
-        voice: voice,
-        content: content
-    }).setACL(acl).save().catch(console.error);
+        voice: this.data.voice,
+        content: this.data.content
+    })
+      .setACL(acl)
+      .save()
+      .then(function(response){
+        console.log(response)
+      })
+      .catch(console.error);
 
     // redirect
     wx.reLaunch({

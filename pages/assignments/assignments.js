@@ -45,13 +45,6 @@ Page({
       url: `../form/form?assignment=${id}`
     })
   },
-  // onReady: function () {
-  //   new AV.Query('Form')
-  //     .descending('createdAt')
-  //     .find()
-  //     .then(forms => this.setData({ forms }))
-  //     .catch(console.error);
-  // },
 
   getUserInfo: function(e) {
     console.log(e)
