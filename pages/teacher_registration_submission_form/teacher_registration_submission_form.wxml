@@ -15,5 +15,6 @@ certificate to (you have one) to CV@EnglishGo.com!</text>
    </view> 
 </view>  
 <view>
-    <button class="weui-btn" type="primary">Submit</button>
+    <button bindtap='toTeacherPostRegister' class="weui-btn" type="primary">Submit</button>
 </view> 
+ 

@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toTeacherPostRegister: function () {
+    wx.navigateTo({
+      url: "../teacher_post_register/teacher_post_register",
+    })
   }
 })

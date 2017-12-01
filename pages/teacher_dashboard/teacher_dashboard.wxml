@@ -8,7 +8,7 @@
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </block>
   
-    <button type="primary" form-type="submit" class='btn'>Assignments</button>
+    <button bindtap="toAssignments" type="primary" form-type="submit" class='btn'>Assignments</button>
  
   
     <button type="primary" form-type="submit" class='btn'>Feedback History</button>
@@ -16,9 +16,6 @@
   
     <button type="primary" form-type="submit" class='btn'>Contanct Us</button>
   
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
   </view>
 </view>
 
