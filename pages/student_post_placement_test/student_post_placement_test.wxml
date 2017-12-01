@@ -13,3 +13,6 @@ EnglishGo!</text>
     go below)</text>
 </view>
 
+<view class="page__bd page__bd_spacing">
+    <button bindtap='toLesson' url="pages/student_pre_test/student_pre_test" class="submit-btn" type="primary">test-to_lesson</button>
+  </view>

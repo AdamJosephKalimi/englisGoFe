@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toStudentPostTest: function () {
+    wx.navigateTo({
+      url: "../student_post_placement_test/student_post_placement_test",
+    })
   }
 })
