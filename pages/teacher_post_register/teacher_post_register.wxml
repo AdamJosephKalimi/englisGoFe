@@ -12,4 +12,5 @@ EnglishGo!</text>
     <text> (EnglishGo77 label will 
     go below)</text>
 </view>
+<button bindtap='toTeacherDashboard' class="submit-btn" type="primary">test-to_dashboard</button>
 

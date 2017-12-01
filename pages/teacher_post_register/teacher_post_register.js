@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toTeacherDashboard: function () {
+    wx.navigateTo({
+      url: "../teacher_dashboard/teacher_dashboard",
+    })
   }
 })

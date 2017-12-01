@@ -62,5 +62,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  toAssignments: function () {
+    wx.navigateTo({
+      url: "../assignments/assignments",
+    })
   }
 })
