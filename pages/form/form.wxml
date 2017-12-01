@@ -23,6 +23,7 @@
   <button bindtap="stopRecording">Stop</button>
   <button bindtap="playRecording">Play</button>
   <button bindtap="playRecording">Save</button>
+  <button bindtap="bindFormSubmission">Submit</button>
   </view>
   <view>
     <text>Tap to hear your student's answer</text>
