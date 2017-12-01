@@ -1,17 +1,19 @@
 <!--pages/student_pre_test/student_pre_test.wxml-->
 <text>Welcome to EnglishGo.
-(Chinese)
+欢迎来到 EnglishGo
 Practice your spoken English. 
-(Chinese)
+练习你的英语口语。
 Get feedback from a 
-(Chinese)
+从英语母语使用者
 Native English Speaker.
-(Chinese)
+获得反馈
 Lower the barrier to persistence
 (Chinese)
+利用现实生活中的话题
 with practice sessions 
-(Chinese)
-using real life topics of conversation</text>
+来降低
+using real life topics of conversation
+坚持练习的障碍</text>
 
 <view>
   <text>(EnglishGo77 Logo will go here)</text>
