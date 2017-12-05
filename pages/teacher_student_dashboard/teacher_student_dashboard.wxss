@@ -52,53 +52,9 @@
   margin: 5px;
 }
 
-#box1 {
-  background-color: #4A90E2;
-  opacity: 1;
-}
-#box2 {
-  background-color: #4A90E2;
-  opacity: 1;
-}
-#box3 {
-  background-color: #4A90E2;
-  opacity: 1;
-}
-#box4 {
+.assigned {
   background-color: #9B9B9B;
   opacity: 1;
-}
-#box5 {
-  background-color: #9B9B9B;
-  opacity: 1;
-}
-#box6 {
-  background-color: #9B9B9B;
-  opacity: 1;
-}
-#box7 {
-  background-color: #9B9B9B;
-  opacity: 0.6;
-}
-#box8 {
-  background-color: #9B9B9B;
-  opacity: 0.6;
-}
-#box9 {
-  background-color: #9B9B9B;
-  opacity: 0.6;
-}
-#box10 {
-  background-color: #9B9B9B;
-  opacity: 0.6;
-}
-#box11 {
-  background-color: #9B9B9B;
-  opacity: 0.6;
-}
-#box12 {
-  background-color: #9B9B9B;
-  opacity: 0.6;
 }
 
 .avatar-container {
@@ -121,4 +77,30 @@
 
 #banner {
   margin-bottom: 30px;
+}
+
+/* lesson locked
+color: #9B9B9B;
+opacity: 0.6; */
+
+/* lesson available
+no submission
+not graded
+color: #4A90E2;
+opacity: 0.6; */
+
+/* lesson available
+Submitted
+not graded
+color: #F5847B;
+opacity: 0.9; */
+
+.submitted {
+  background-color: #F5847B;
+  opacity: 0.9;
+}
+
+.graded {
+  background-color: #4A90E2;
+  opacity: 0.9;
 }
