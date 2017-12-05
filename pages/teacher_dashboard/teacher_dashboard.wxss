@@ -1,15 +1,87 @@
 /* pages/teacher_dashboard/teacher_dashboard.wxss */
 
-.btn {
-margin: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #868686;
-  height: 50px; 
-}
-
 .welcome {
   display: flex;
   justify-content: center;
   flex-direction: row;
+}
+
+.studentAvatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  border: grey 1px solid;
+}
+
+.teacherAvatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: grey 1px solid;
+}
+
+.students {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+
+.btn-assignments {
+  color: white;
+  padding: 10px 10px;
+  /* border-radius: 1px; */
+  width: 18px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+.lessons {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+
+#row1 {
+  background-color: #4A90E2;
+  opacity: 1;
+}
+#row2 {
+  background-color: #4A90E2;
+  opacity: 0.9;
+}
+#row3 {
+  background-color: #4A90E2;
+  opacity: 0.7;
+}
+#row4 {
+  background-color: #4A90E2;
+  opacity: 0.6;
+}
+#row5 {
+  background-color: #4A90E2;
+  opacity: 0.4;
+}
+#row6 {
+  background-color: #4A90E2;
+  opacity: 0.3;
+}
+
+.avatar-container {
+  max-width: 100%;
+  margin-top: 200rpx;
+  margin-bottom: 20rpx;
+  /* margin: 10px 0px; */
+  height: 70px;
+  overflow: scroll;
+}
+
+.studentAvatar {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  border-radius: 50%;
+  border: #9B9B9B 1px solid;
 }

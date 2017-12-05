@@ -1,22 +1,44 @@
 <!--pages/teacher_dashboard/teacher_dashboard.wxml-->
 <view class="container">
   <view class="userinfo">
-  <text class='welcome'>Welcome (teacher)!</text>
+    <view>
+      <!-- Create the avatar and write Welcome ({{user}} - mustache to import the current user)  -->
+      <image src="{{teacher_img}}" class="teacherAvatar"></image>
+    </view>
+    <text class='welcome'>Welcome (teacher)!</text>
+  </view>
+  <view>
+    <text>My Students</text>
+  </view>
+  <view class="avatar-container">
+  <!--code the avatars that bring in the avatars of the various students assigned to a particular teacher  -->
+    <block  wx:for="{{students}}" wx:for-item="element" wx:key="index">
+       <image src="{{element.src}}" class="studentAvatar" bindtap='navProfile' id="{{element.id}}"></image> 
+    </block>
+  </view>
 
-  <block>
-    <image bindtap="" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </block>
-  
-    <button bindtap="toAssignments" type="primary" form-type="submit" class='btn'>Assignments</button>
- 
-  
-    <button type="primary" form-type="submit" class='btn'>Feedback History</button>
-  
-  
-    <button type="primary" form-type="submit" class='btn'>Contanct Us</button>
-  
+
+  <view class='assignmentIndex'>
+    <!--code the assignment index as cubes (2 rows of 6) and colorcode -->
+    <!--Need to code a color to overide the button which holds the 
+    current day's assignment.  -->
+    <ul class="list-inline lessons hidden-sm hidden-xs">
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row1'>1</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row2'>2</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row3'>3</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row4'>4</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row5'>5</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row6'>6</navigator></li>
+    </ul>
+    <ul class="list-inline lessons hidden-sm hidden-xs">
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row1'>7</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row2'>8</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row3'>9</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row4'>10</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row5'>11</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row6'>12</navigator></li>
+    </ul>   
   </view>
 </view>
 
-
+<!-- <button bindtap='pushStudent'class='link'>student</button> -->

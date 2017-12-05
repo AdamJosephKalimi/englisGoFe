@@ -1,0 +1,4 @@
+<!--pages/teacher_my_students/teacher_my_students.wxml-->
+<text>pages/teacher_my_students/teacher_my_students.wxml</text>
+
+<!--Display the list of students as tapable names. tapping on a name will take you to teacher_student_profile.  -->
