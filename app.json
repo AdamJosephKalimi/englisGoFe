@@ -1,8 +1,9 @@
 {
   "pages": [  
+    "pages/student_dashboard/student_dashboard",
     "pages/teacher_student_dashboard/teacher_student_dashboard",
     "pages/teacher_dashboard/teacher_dashboard",
-    "pages/student_dashboard/student_dashboard",
+    
     "pages/form/form",
 "pages/teacher_registration_submission_form/teacher_registration_submission_form",
     "pages/teacher_post_register/teacher_post_register",
