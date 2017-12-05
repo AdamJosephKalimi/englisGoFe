@@ -1,11 +1,15 @@
-// pages/teacher_my_students/teacher_my_students.js
+// pages/teacher_student_dashboard/teacher_student_dashboard.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    array: [{
+      mode: 'aspectFit',
+      text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+    }],
+    src: '../../image/cityBanner.png'
   },
 
   /**
