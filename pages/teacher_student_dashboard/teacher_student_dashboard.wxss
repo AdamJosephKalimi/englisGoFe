@@ -1,5 +1,4 @@
-/* pages/teacher_dashboard/teacher_dashboard.wxss */
-
+/* pages/teacher_student_dashboard/teacher_student_dashboard.wxss */
 .welcome {
   display: flex;
   justify-content: center;
@@ -14,13 +13,16 @@
 }
 
 .studentAvatar {
-  width: 80rpx;
-  height: 80rpx;
+  width: 160rpx;
+  height: 160rpx;
   border-radius: 50%;
   border: grey 1px solid;
+  top: 10px;
 }
 
 .teacherAvatar {
+  display: flex;
+  justify-content: center;
   width: 160rpx;
   height: 160rpx;
   border-radius: 50%;
@@ -47,32 +49,56 @@
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 0px;
+  margin: 5px;
 }
 
-#row1 {
+#box1 {
   background-color: #4A90E2;
   opacity: 1;
 }
-#row2 {
+#box2 {
   background-color: #4A90E2;
-  opacity: 0.9;
+  opacity: 1;
 }
-#row3 {
+#box3 {
   background-color: #4A90E2;
-  opacity: 0.7;
+  opacity: 1;
 }
-#row4 {
-  background-color: #4A90E2;
+#box4 {
+  background-color: #9B9B9B;
+  opacity: 1;
+}
+#box5 {
+  background-color: #9B9B9B;
+  opacity: 1;
+}
+#box6 {
+  background-color: #9B9B9B;
+  opacity: 1;
+}
+#box7 {
+  background-color: #9B9B9B;
   opacity: 0.6;
 }
-#row5 {
-  background-color: #4A90E2;
-  opacity: 0.4;
+#box8 {
+  background-color: #9B9B9B;
+  opacity: 0.6;
 }
-#row6 {
-  background-color: #4A90E2;
-  opacity: 0.3;
+#box9 {
+  background-color: #9B9B9B;
+  opacity: 0.6;
+}
+#box10 {
+  background-color: #9B9B9B;
+  opacity: 0.6;
+}
+#box11 {
+  background-color: #9B9B9B;
+  opacity: 0.6;
+}
+#box12 {
+  background-color: #9B9B9B;
+  opacity: 0.6;
 }
 
 .avatar-container {
@@ -91,4 +117,8 @@
   margin: 0 5px;
   border-radius: 50%;
   border: #9B9B9B 1px solid;
+}
+
+#banner {
+  margin-bottom: 30px;
 }
