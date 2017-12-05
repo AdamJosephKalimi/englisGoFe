@@ -1,0 +1,36 @@
+<!--pages/teacher_student_dashboard/teacher_student_dashboard.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <view>
+      <!-- Create the avatar and write Welcome ({{user}} - mustache to import the current user)  -->
+      <image src="{{student_img}}" class="teacherAvatar"></image>
+    </view>
+    <text class='welcome'>(student name)</text>
+  </view>
+
+  <view>
+    <image id='banner' style="width: 320px; height: 148px; background-color: #D8D8D8;" src="{{src}}"></image>
+  </view>
+
+  <view class='assignmentIndex'>
+    <!--code the assignment index as cubes (2 rows of 6) and colorcode -->
+    <!--Need to code a color to overide the button which holds the 
+    current day's assignment.  -->
+    <ul class="list-inline lessons hidden-sm hidden-xs">
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box1'>1</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box2'>2</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box3'>3</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box4'>4</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box5'>5</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box6'>6</navigator></li>
+    </ul>
+    <ul class="list-inline lessons hidden-sm hidden-xs">
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box7'>7</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box8'>8</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box9'>9</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box10'>10</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box11'>11</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='box12'>12</navigator></li>
+    </ul>   
+  </view>
+</view>
