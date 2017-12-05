@@ -1,11 +1,11 @@
 <!--pages/teacher_student_select/teacher_student_select.wxml-->
 
 <view class="assignments container">
- <view class="page__bd page__bd_spacing">
-    <button bindtap='pushStudent' url="pages/student_pre_test/student_pre_test" class="weui-btn" type="primary">Register as Student</button>
+  <text class="heading">englishGo</text>
+  <view>
+    <image id='go' style="width: 432rpx; height: 268rpx; background-color: white;" src="{{src}}"></image>
   </view>
-  <text class="heading">EnglishGo77</text>
-  <view class="page__bd page__bd_spacing">
-    <button bindtap='pushTeacher' class="weui-btn" type="primary">Register as Teacher</button>
+  <view class='choice'>
+    <text>Are you a</text><button bindtap='pushStudent'class='link'>student</button><text> or a</text><button bindtap='pushTeacher' class='link'>teacher</button><text>?</text>
   </view>
 </view>

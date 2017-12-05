@@ -1,20 +1,27 @@
 <!--pages/teacher_registration_submission_form/teacher_registration_submission_form.wxml-->
 <view>
-  <text class='space'>We'd love to hear more about why you'd like to become a mobile English teacher!</text>
+  <text class='heading'>Hey let's chat!</text>
 </view>
-<view class='space'>
-  <text>Please email your CV and your teaching
-certificate to (you have one) to CV@EnglishGo.com!</text>
-</view>
-<view class="page__bd page__bd_spacing">
-    <view class="weui-flex">
-      <view class="weui-flex__item">
-        <view class="placeholder">(dynamic box to show assignments)
-      </view>
-    </view>
-   </view> 
+<view id='form'>
+  <view class="section">
+    <view class="section__title">Name</view>
+    <input name="input" placeholder="please input here" />
+  </view>
+  <view class="section">
+    <view class="section__title">Birthday</view>
+    <input name="input" placeholder="please input here" />
+  </view>
+  <view class="section">
+    <view class="section__title">City</view>
+    <input name="input" placeholder="please input here" />
+  </view>
+  <view class="section">
+    <view class="section__title">Emai</view>
+    <input name="input" placeholder="please input here" />
+  </view>
 </view>  
 <view>
-    <button bindtap='toTeacherPostRegister' class="weui-btn" type="primary">Submit</button>
+    <button bindtap='toTeacherPostRegister' class="btn">Submit</button>
 </view> 
+ 
  

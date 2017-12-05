@@ -10,20 +10,25 @@
   margin: 100px; 
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
+  color: #409EEB;
   /* Import Avenir Next  */
 }
 
-.weui-btn {
-  margin: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #868686;
-  height: 50px; 
+/* .link {
+  text-decoration-line: true;
+} */
+.link { 
+  /*import this  */
+  font-family: Avenir-Heavy;
+  font-size: 20px;
+  color: #4A4A4A;
+  line-height: 30px;
 }
-.submit-btn {
-  margin: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #868686;
-  height: 50px; 
+
+#go {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  
 }
+
