@@ -1,0 +1,27 @@
+.btn {
+margin: 10px;
+  width: 200px;
+  border-radius: 5px;
+  border: 1px solid #868686;
+  height: 50px; 
+}
+
+.welcome {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+#progressbar {
+  background-color: #ddd;
+  border-radius: 5px; /* (height of inner div) / 2 + padding */
+}
+
+#myBar {
+    width: 10%;
+    height: 30px;
+    background-color: #1CAE32;
+    text-align: center; /* To center it horizontally (if you want) */
+    line-height: 30px; /* To center it vertically */
+    color: white; 
+}

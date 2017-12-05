@@ -1,6 +1,6 @@
 /* pages/teacher_registration_submission_form/teacher_registration_submission_form.wxss */
 
-.space {
+.heading {
   margin: 30px;
 }
 
@@ -8,7 +8,7 @@
     margin: 5px;
     padding: 0 10px;
     text-align: center;
-    background-color: #EBEBEB;
+    background-color: #409EEB;
     height: 2.3em;
     line-height: 2.3em;
     color: #cfcfcf;
@@ -24,14 +24,53 @@
   justify-content: center;
 }
 
-.weui-btn {
-  margin: 10px;
-  width: 200px;
-  border-radius: 5px;
-  border: 1px solid #868686;
-  height: 50px; 
+.btn {
+border-radius: 8px;
+margin: 50px;
+background-color: #409EEB;
+color: white;
 }
-
 .weui-flex__item {
   margin: 50px;
+}
+
+#form {
+/* line: */
+background: #E5E5E5;
+/* Label : */
+font-family: Avenir-Heavy;
+font-size: 14.96px;
+color: #000000;
+letter-spacing: 0;
+/* Label : */
+font-family: PingFangSC-Regular;
+font-size: 14.96px;
+color: #B2B2B2;
+letter-spacing: 0;
+/* Label: */
+font-family: Avenir-Heavy;
+font-size: 14.96px;
+color: #000000;
+letter-spacing: 0;
+/* Label : */
+font-family: PingFangSC-Regular;
+font-size: 14.96px;
+color: #B2B2B2;
+letter-spacing: 0;
+/* line: */
+background: #E5E5E5;
+/* Label: */
+border: 1px solid #979797;
+font-family: Avenir-Heavy;
+font-size: 14.96px;
+color: #000000;
+letter-spacing: 0;
+/* Label : */
+font-family: PingFangSC-Regular;
+font-size: 14.96px;
+color: #B2B2B2;
+letter-spacing: 0;
+/* short line : */
+background: #E5E5E5;
+/* Label: */
 }

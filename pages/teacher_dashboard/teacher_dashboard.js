@@ -5,7 +5,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    array: [{
+      mode: 'aspectFit',
+      text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+    }],
+    teacher_img: '../../image/Batch 122-32.jpg',
+    students: [
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+      { src: '../../image/Batch 122-32.jpg' },
+    ]
+    // Must be able to dynamically import photos
   },
 
   /**
@@ -65,7 +82,13 @@ Page({
   },
   toAssignments: function () {
     wx.navigateTo({
-      url: "../assignments/assignments",
+      url: "../form/form",
+    })
+  },
+  toMyStudents: function () {
+    wx.navigateTo({
+      //Route to a student index linked to this teacher
+      //url: "../assignments/assignments",
     })
   }
 })

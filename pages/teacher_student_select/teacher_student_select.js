@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    array: [{
+      mode: 'aspectFit',
+      text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+    }],
+    src: '../../image/hero-transparency-reports@1x_2.svg'
   },
 
   /**

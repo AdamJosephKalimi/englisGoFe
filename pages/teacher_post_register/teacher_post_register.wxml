@@ -1,16 +1,18 @@
 <!--pages/teacher_post_register/teacher_post_register.wxml-->
-<text>Thank you for applying!
-We’ll get back to you in 
-less than 24 hours with
-the results of your test.
-
-In the meantime, take a 
-look at this link to find out 
-more about studying with
-EnglishGo!</text>
 <view>
-    <text> (EnglishGo77 label will 
-    go below)</text>
+  <image id='go' style="width: 373px; height: 280px; background-color: #D8D8D8;" src="{{src}}"></image>
 </view>
-<button bindtap='toTeacherDashboard' class="submit-btn" type="primary">test-to_dashboard</button>
+<view>
+  <text class='thankYou'>Thank you for applying!
+  
+  We’ll get back to you in 
+  less than 24 hours with
+  the results of your test.
+
+  In the meantime, take a 
+  look at this link to find out 
+  more about studying with
+  EnglishGo!</text>
+</view>
+<button bindtap='toTeacherDashboard' class="submit-btn">test-to_dashboard</button>
 

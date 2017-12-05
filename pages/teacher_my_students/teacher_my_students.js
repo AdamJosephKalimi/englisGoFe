@@ -1,4 +1,4 @@
-// pages/student_post_placement_test/student_post_placement_test.js
+// pages/teacher_my_students/teacher_my_students.js
 Page({
 
   /**
@@ -62,10 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  toLesson: function () {
-    wx.navigateTo({
-      url: "../student_dashboard/student_dashboard",
-    })
   }
 })

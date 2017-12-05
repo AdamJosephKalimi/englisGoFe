@@ -1,4 +1,4 @@
-// pages/student_post_placement_test/student_post_placement_test.js
+// pages/student_dashboard/student_dashboard.js
 Page({
 
   /**
@@ -62,10 +62,20 @@ Page({
    */
   onShareAppMessage: function () {
   
-  },
-  toLesson: function () {
-    wx.navigateTo({
-      url: "../student_dashboard/student_dashboard",
-    })
   }
+  // Update the js to respond dynamically to creation of submissions.
+//   function move() {
+//     var elem = document.getElementById("myBar");   
+//     var width = 10;
+//     var id = setInterval(frame, 10);
+//     function frame() {
+//     if(width >= 100) {
+//       clearInterval(id);
+//     } else {
+//       width++; 
+//       elem.style.width = width + '%'; 
+//       elem.innerHTML = width * 1 + '%';
+//     }
+//   }
+// }
 })

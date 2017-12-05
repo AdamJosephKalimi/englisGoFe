@@ -3,6 +3,16 @@
   margin: 10px;
   width: 200px;
   border-radius: 5px;
-  border: 1px solid #868686;
+  border: 1px solid #409EEB;
   height: 50px; 
+  color: whitesmoke;
+  background-color: #409EEB;
+}
+
+.thankYou {
+  /* Thank you for applyi: */
+font-family: AvenirNext-Medium;
+font-size: 21px;
+color: #646161;
+line-height: 26px;
 }
