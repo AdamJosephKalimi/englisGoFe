@@ -21,30 +21,28 @@
   </view>
 
 
+<view wx:if="{{lesson.submission}}"><include src="../components/listen_to_student.wxml"/>
+  <include src="../components/teacher_record.wxml"/></view> 
 
+<view wx:elif="{{lesson.grading}}"><include src="../components/listen_to_student.wxml"/>
+  <include src="../components/listen_to_teacher.wxml"/>
+</view>
+
+
+///////////////////////////////////////////////
 <!-- <view wx:if="{{If a teacher is listening and giving feedback}}"><include src="../components/listen_to_student.wxml"/>
   <include src="../components/teacher_record.wxml"/></view>
 <view wx:elif="{{If a teacher is listening to feedback}}"><include src="../components/listen_to_student.wxml"/>
   <include src="../components/teacher_record.wxml"/></view>
 <view wx:else><include src="../components/recording_form.wxml"/></view> -->
-  <!--Conditionally render partials  -->
+ 
 
-  <!--If it's a lesson  -->
-  <!-- <include src="../components/recording_form.wxml"/> -->
-
-  <!-- If a teacher is listening and giving feedback -->
-  <!-- <include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/> -->
-
-  <!-- If a teacher is listening to feedback -->
-  <!-- <include src="../components/listen_to_student.wxml"/>
-  <include src="../components/listen_to_teacher.wxml"/> -->
+<view wx:else><include src="../components/student_record.wxml"/></view>
 
 
   <view>
-    <button class="submit-btn">Submit</button>
+    <button class="submit-btn" bindtap='toMyStudents'>Submit</button>
   </view>
-
 
 
   <view id="ipa_container">

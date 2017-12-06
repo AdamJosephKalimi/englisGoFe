@@ -62,7 +62,7 @@ Page({
     })
   },
 
-  toAssignments: function () {
+  toLessons: function () {
     let id = event.currentTarget.dataset.ass_id
     postNewLesson(id)
 
@@ -72,10 +72,17 @@ Page({
       url: `../lesson/lesson?assignment=${id}`,
     })
   },
+  studentAvatar: function () {
+    wx.navigateTo({
+      url: "../teacher_student_avatar/teacher_student_avatar",
+    })
+  },
+
+  
   toMyStudents: function () {
     wx.navigateTo({
       //Route to a student index linked to this teacher
-      //url: "../assignments/assignments",
+      url: "../teacher_student_avatar/teacher_student_avatar",
     })
   }
 })
