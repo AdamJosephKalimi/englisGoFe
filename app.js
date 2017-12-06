@@ -43,10 +43,16 @@ App({
   },
   sendCodeToBackend: function (code, res) {
     var that = this
+    var domain = that.globalData.dev_domain
     wx.request({
-      url: 'http://localhost:3000/api/v1/users',
+      url: `${domain}/api/v1/users`,
       method: 'POST',
-      data: { code: code, user: { username: res.userInfo.nickName } },
+      data: {
+        code: code,
+        user: {
+          username: res.userInfo.nickName,
+          user_avatar: res.userInfo.avatarUrl
+        } },
       success: function (res) {
         console.log('done with sendCodeToBackend')
         that.globalData.open_id = res.data.open_id
@@ -62,6 +68,8 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    prod_domain: 'root@101.37.31.161',
+    dev_domain: 'http://localhost:3000'
   }
 })
