@@ -3,39 +3,31 @@
   <view class="page__hd">
     <view class="page__title">Choose the best answer</view>
   </view>
-  <view class="page__bd page__bd_spacing">
-    <view class="weui-flex">
-      <view class="weui-flex__item">
-        <view class="placeholder">(1. Yesterday I ______ to Le Wagon.
-        A. go
-        B. went
-        C. am going
-        D. code)
-        <text>{{assign.content}}</text>
-        </view>
-      </view>
-    </view> 
-  </view>  
+    <view>
+    <text>
+    (1. Yesterday I ______ to Le Wagon.
+      A. go
+      B. went
+      C. am going
+      D. code)
+      </text>
+      <text>{{assign.content}}</text>
+    </view>  
   <view>
-    <text>Tell us about your favorite place! Use as much detail as possible. Tap the button below to start recording yourself. Tap again once you're done.告诉我们你最喜欢的地方！ 尽可能多地使用细节。 点击下面的按钮开始录制自己。 一旦你完成，再次点击。</text>
+    <text class='assignment_text'>Tell us about your favorite place! Use as much detail as possible. Tap the button below to start recording yourself. Tap again once you're done.告诉我们你最喜欢的地方！ 尽可能多地使用细节。 点击下面的按钮开始录制自己。 一旦你完成，再次点击。</text>
     <!-- This will call content from the db -->
     <text>{{assign.voice}}</text>
   </view>
   <view>
-  <button bindtap="startRecording">Start</button>
-  <button bindtap="stopRecording">Stop</button>
-  <button bindtap="playRecording">Play</button>
-  <button bindtap="playRecording">Save</button>
-  </view>  
+  <include src="../components/placement_test_record.wxml"/>
+  </view>   
+
   <view>
-    <text>Tap below to record</text>
+    <button class="submit-btn" bindtap='toStudentPostTest' url="pages/student_pre_test/student_pre_test">Submit</button>
   </view>
-  <view>
-    <button class="weui-btn" type="primary">mic icon</button>
-  </view>  
-  <view class="page__bd page__bd_spacing">
+  <!-- <view class="page__bd page__bd_spacing">
     <button bindtap='toStudentPostTest' url="pages/student_pre_test/student_pre_test" class="submit-btn" type="primary">Submit</button>
-  </view>
+  </view> -->
 </view>
 
 

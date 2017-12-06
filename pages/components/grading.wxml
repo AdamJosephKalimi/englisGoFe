@@ -1,0 +1,4 @@
+<view wx:if="{{lesson.grading}}">
+  <include wx:if="{{lesson.student_id == 2}}" src="../components/listen_to_teacher.wxml"/>
+  <include src="../components/teacher_record.wxml"/>
+</view>

@@ -18,20 +18,20 @@
     <!--Need to code a color to overide the button which holds the
     current day's assignment.  -->
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box1_class}}" id='box1' data-ass_id='{{lessons[0].id}}'>1</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box2_class}}" id='box2' data-ass_id='{{lessons[1].id}}'>2</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box3_class}}" id='box3' data-ass_id='{{lessons[2].id}}'>3</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box4_class}}" id='box4' data-ass_id='{{lessons[3].id}}'>4</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box5_class}}" id='box5' data-ass_id='{{lessons[4].id}}'>5</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box6_class}}" id='box6' data-ass_id='{{lessons[5].id}}'>6</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box1_class}}" id='box1' data-ass_id='{{lessons[0].id}}'>1</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box2_class}}" id='box2' data-ass_id='{{lessons[1].id}}'>2</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box3_class}}" id='box3' data-ass_id='{{lessons[2].id}}'>3</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box4_class}}" id='box4' data-ass_id='{{lessons[3].id}}'>4</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box5_class}}" id='box5' data-ass_id='{{lessons[4].id}}'>5</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box6_class}}" id='box6' data-ass_id='{{lessons[5].id}}'>6</navigator></li>
     </ul>
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box7_class}}" id='box7' data-ass_id='{{lessons[6].id}}'>7</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box8_class}}" id='box8' data-ass_id='{{lessons[7].id}}'>8</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box9_class}}" id='box9' data-ass_id='{{lessons[8].id}}'>9</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box10_class}}" id='box10' data-ass_id='{{lessons[9].id}}'>10</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box11_class}}" id='box11' data-ass_id='{{lessons[10].id}}'>11</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/form/form" class="btn-assignments {{box12_class}}" id='box12' data-ass_id='{{lessons[11].id}}'>12</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box7_class}}" id='box7' data-ass_id='{{lessons[6].id}}'>7</navigator></li>
+      <li><navigator bindtap='toLessons' url="//pages/lesson/lesson" class="btn-assignments {{box8_class}}" id='box8' data-ass_id='{{lessons[7].id}}'>8</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box9_class}}" id='box9' data-ass_id='{{lessons[8].id}}'>9</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box10_class}}" id='box10' data-ass_id='{{lessons[9].id}}'>10</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box11_class}}" id='box11' data-ass_id='{{lessons[10].id}}'>11</navigator></li>
+      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box12_class}}" id='box12' data-ass_id='{{lessons[11].id}}'>12</navigator></li>
     </ul>
   </view>
 

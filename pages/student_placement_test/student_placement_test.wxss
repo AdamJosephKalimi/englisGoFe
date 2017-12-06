@@ -41,3 +41,118 @@
 .weui-flex__item {
   margin: 50px;
 }
+
+
+.container {
+  padding-top: 100rpx;
+  padding-right: 36rpx;
+  padding-left: 36rpx; 
+}
+
+.assignment_text {
+  margin-bottom: 36rpx;
+  font-family: AvenirNext-Regular;
+  font-size: 12px;
+}
+
+.lesson_title {
+  font-family: AvenirNext-Regular;
+  font-size: 18px;
+}
+
+.rcrd-bckgrnd {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin-top: 100rpx;
+  background-color: rgba(0,0,0,0.1);
+  width: 320px;
+  /* opacity: 0.8;  */
+  font-family: AvenirNext-Regular;
+  font-size: 14px;
+  color: #646161;
+  height: 170px;
+}
+
+.record_btn_1 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  background-color: #4A90E2;
+  border-radius: 50%;
+  width: 160rpx;
+  height: 160rpx;
+  opacity: 1.0;
+}
+
+.record_btn_2 {
+  background-color: #4A90E2;
+  border-radius: 50%;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+#ipa_container {
+  display: flex;
+  justify-content: space-between; 
+  height: 100%;
+  width: 650rpx;
+}
+
+  .words_1 {
+  font-family: AvenirNext-Medium;
+  font-size: 14px;
+  color: #646161;
+  line-height: 26px;
+} 
+
+ .words_2 {
+  font-family: AvenirNext-Medium;
+  font-size: 14px;
+  color: #646161;
+  line-height: 26px;
+} 
+
+.student_directions {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+}
+
+.warning {
+  display: flex;  
+  flex-direction: column;
+  align-items: center;
+  font-family: AvenirNext-Regular;
+  font-size: 12px;
+  color: #646161;
+}
+
+.btn_class {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  /* height: 150px; */
+  padding: 10px;
+}
+
+/* .go{
+
+} */
+
+.submit-btn {
+  color: #656565;
+  background-color: rgba(0,0,0,0.1);
+  border: 1px solid #4A90E2;
+  padding: 5px 20px;
+  margin: 20px;
+  border-radius: 10px;
+  font-family: AvenirNext-Regular;
+  font-weight: lighter;
+  opacity: 0.8;
+}

@@ -1,0 +1,5 @@
+<view wx:if="{{lesson.submission}}">
+<include src="../components/listen_to_student.wxml"/>
+<include src="../components/student_record.wxml"/>
+
+</view>
