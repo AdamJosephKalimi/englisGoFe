@@ -28,12 +28,17 @@ Page({
     userInfo: {},
     is_recording: false
   },
+  array: [{
+    mode: 'aspectFit',
+    text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
+  }],
 
   buttonClicked: function() {
     let is_recording = this.data.is_recording
     console.log("recording?" + is_recording)
     if (is_recording) {
       this.stopRecording()
+      this.playRecording()
     } else {
       this.startRecording()
     }
@@ -60,6 +65,7 @@ Page({
       wx.stopRecord()
   },
   playRecording: function () {
+    var that = this
     wx.playVoice({
       filePath: that.data.recording_path,
       complete: function () {
