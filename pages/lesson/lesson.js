@@ -3,8 +3,9 @@ const qiniuUploader = require("../../utils/qiniuUploader.js");
 function initQiniu() {
   var options = {
     region: 'ECN',
-    uptoken: 'PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:u5s-CgIKhJmnCACo4a62kbX2zqQ=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0aW5nYWdhaW4ucG5nIiwiZGVhZGxpbmUiOjE1MTI1NDMzODAsInVwaG9zdHMiOlsiaHR0cDovL3VwLnFpbml1LmNvbSIsImh0dHA6Ly91cGxvYWQucWluaXUuY29tIiwiLUggdXAucWluaXUuY29tIGh0dHA6Ly8xODMuMTMxLjcuMTgiXSwiZ2xvYmFsIjpmYWxzZX0=',
-    domain: 'http://englishgo.bkt.clouddn.com',
+    uptoken: "PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:f6iSqqM_s10YphHPt9GVlzSBal0=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0dm9pY2Uuc2lsayIsImRlYWRsaW5lIjoxNTEyNjExNDc3LCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjE4Il0sImdsb2JhbCI6ZmFsc2V9",
+    domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+
     shouldUseQiniuFileName: false
   };
   qiniuUploader.init(options);
@@ -20,6 +21,10 @@ Page({
     voice: null,
     lesson: null,
     recording_path: null,
+    storage_path: null,
+    storage_key: null,
+    storage_hash: null,
+
     userInfo: {},
     is_recording: false
   },
@@ -39,7 +44,6 @@ Page({
 
   startRecording: function () {
     var that = this
-
     wx.startRecord({
       success: function (res) {
         that.setData({
@@ -107,31 +111,39 @@ Page({
     var filePath = that.data.recording_path
 
     qiniuUploader.upload(filePath, (res) => {
-      console.log("I'm here!!!!!!!!");
-
       console.log(res);
       that.setData({
-        'recording': res.key
+        storage_path: res.voiceUrl,
+        storage_key: res.key,
+        storage_hash: res.hash
       });
     }, (error) => {
       console.error('error: ' + JSON.stringify(error));
-    });
-
+    },
+    {
+      region: 'ECN',
+      uptoken:"PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:f6iSqqM_s10YphHPt9GVlzSBal0=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0dm9pY2Uuc2lsayIsImRlYWRsaW5lIjoxNTEyNjExNDc3LCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjE4Il0sImdsb2JhbCI6ZmFsc2V9",
+      domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+      shouldUseQiniuFileName: false,
+      key: 'testvoice.silk'
+    }
+    );
   },
 
-  // downloadVoice: function (){
-  //   wx.downloadFile({
-  //   url: 'https://example.com/audio/123', //仅为示例，并非真实的资源
-  //   success: function(res) {
+  downloadVoice: function (){
+    wx.downloadFile({
+    url: `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
+    success: function(res) {
 
-  //       if (res.statusCode === 200) {
-  //           wx.playVoice({
-  //             filePath: res.tempFilePath
-  //         })
-  //       }
-  //     }
-  //   })
-  // },
+        if (res.statusCode === 200) {
+            wx.playVoice({
+              filePath: res.tempFilePath
+          })
+        }
+      }
+    })
+  },
+
   onLoad: function (options) {
     initQiniu();
     console.log(options)
@@ -178,11 +190,10 @@ Page({
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
 
-    that.uploadVoice()
+    var voice_submission = that.data.storage_path
+    var voice_key = that.data.storage_key
 
-    this.setData({
-      loading: !this.data.loading
-    })
+    that.uploadVoice()
 
     wx.request({
       method: 'POST',
@@ -192,8 +203,8 @@ Page({
         user_token: authToken,
         lesson_id: lessonId,
         submission: {
-          voice: 'temp',
-          content: "Good!"
+          voice: voice_submission,
+          content: voice_key
         }
       },
       success: function (response){
