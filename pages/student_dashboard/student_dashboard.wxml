@@ -3,7 +3,7 @@
   <view class="userinfo">
     <view>
       <!-- Create the avatar and write Welcome ({{user}} - mustache to import the current user)  -->
-      <image src="{{userInfo.avatarUrl}}" class="teacherAvatar"></image>
+      <image src="{{userInfo.avatarUrl}}" class="studentAvatar"></image>
     </view>
 
     <text class='welcome'>{{userInfo.nickName}}</text>
