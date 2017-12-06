@@ -43,7 +43,7 @@ function updateConfigWithOptions(options) {
         config.qiniuUploadTokenFunction = options.uptokenFunc;
     }
     if (options.domain) {
-        config.qiniuImageURLPrefix = options.domain;
+        config.qiniuVoiceURLPrefix = options.domain;
     }
     config.qiniuShouldUseQiniuFileName = options.shouldUseQiniuFileName
 }
@@ -90,7 +90,7 @@ function doUpload(filePath, success, fail, options) {
     if (!config.qiniuShouldUseQiniuFileName) {
       formData['key'] = fileName
     }
-    debugger
+    console.log('debugger place')
     wx.uploadFile({
         url: url,
         filePath: filePath,
@@ -101,8 +101,8 @@ function doUpload(filePath, success, fail, options) {
           try {
             var dataObject = JSON.parse(dataString);
             //do something
-            var imageUrl = config.qiniuImageURLPrefix + '/' + dataObject.key;
-            dataObject.imageURL = imageUrl;
+            var voiceUrl = config.qiniuVoiceURLPrefix + '/' + dataObject.key;
+            dataObject.voiceURL = voiceUrl;
             console.log(dataObject);
             if (success) {
               success(dataObject);
