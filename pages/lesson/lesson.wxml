@@ -5,6 +5,9 @@
   </view>
   <view>
     <text class='assignment_text'>
+      <!-- {{lesson.assignment.title}} add this field to database -->
+
+      <!-- {{lesson.assignment.content}} -->
       (This text will be the lesson)
       (Our topic for today will be talking about motivation.
       Please make sure to create 1. Written and 2. Spoken entry for me to be able to give you feedback on both.
@@ -20,12 +23,12 @@
     </text>
   </view>
 
-  <include src="../components/submission.wxml"/>
-  
-  <include src="../components/grading.wxml"/>
+   <include src="../components/submission.wxml"/> 
+
+   <include src="../components/grading.wxml"/> 
 
   <view>
-    <button class="submit-btn" bindtap='toMyStudents'>Submit</button>
+    <button class="submit-btn" bindtap='saveLesson'>Submit</button>
   </view>
 
 

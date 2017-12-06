@@ -6,7 +6,7 @@
     <!--The user will push the record button  -->
       <!--start/stop recording  -->
   <view class='btn_class'>
-    <button bindtap="buttonClicked" class='record_btn_1'>
+    <button bindtap="studentRecordClicked" class='record_btn_1'>
       
       <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>
 

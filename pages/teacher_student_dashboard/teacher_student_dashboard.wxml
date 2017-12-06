@@ -17,20 +17,20 @@
     <!--Need to code a color to overide the button which holds the 
     current day's assignment.  -->
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box1_class}}" id='box1'>1</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box2_class}}" id='box2'>2</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box3_class}}" id='box3'>3</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box4_class}}" id='box4'>4</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box5_class}}" id='box5'>5</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box6_class}}" id='box6'>6</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box1_class}}" id='box1'>1</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box2_class}}" id='box2'>2</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box3_class}}" id='box3'>3</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box4_class}}" id='box4'>4</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box5_class}}" id='box5'>5</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box6_class}}" id='box6'>6</navigator></li>
     </ul>
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box7_class}}" id='box7'>7</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box8_class}}" id='box8'>8</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box9_class}}" id='box9'>9</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box10_class}}" id='box10'>10</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box11_class}}" id='box11'>11</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments {{box12_class}}" id='box12'>12</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box7_class}}" id='box7'>7</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box8_class}}" id='box8'>8</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box9_class}}" id='box9'>9</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box10_class}}" id='box10'>10</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box11_class}}" id='box11'>11</navigator></li>
+      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments {{box12_class}}" id='box12'>12</navigator></li>
     </ul>   
   </view>
 </view>

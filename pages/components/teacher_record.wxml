@@ -1,19 +1,17 @@
 <view class='rcrd-bckgrnd'>
+  <view class='student_directions'>
     <text>Tap to give feedback</text>
+  </view>
     <!--The user will push the record button  -->
       <!--start/stop recording  -->
-    <button bindtap="buttonClicked" class='record_btn_1'>
-    
-      <view wx:if="{{!is_recording}}"> start</view>
-      <view wx:elif="{{is_recording}}"> stop</view>    
-    
-    </button>
-    <button bindtap="playButtonClicked" class='record_btn_1'>
-    
-      <view wx:if="{{!is_playing}}"> play</view>
-      <view wx:elif="{{is_playing}}"> stop</view>   
-    
-    </button>
+  <view class='btn_class'>
+    <button bindtap="teacherRecordClicked" class='record_btn_1'>
+      
+      <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>
 
-    <text>There is a 3 minute time limit</text>
+    </button>
+  </view>
+  <view class='warning'>
+    <text>There is a 1 minute time limit</text>
+  </view>
 </view>

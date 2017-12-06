@@ -79,13 +79,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
     var that = this
 
     // var endpoint = 'https://english-go.herokuapp.com/api/v1/lessons'
@@ -121,6 +114,13 @@ Page({
         console.log('completed!' + res.statusCode);
       }
     })
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    this.setData({ student_img: app.globalData.userInfo.avatarUrl })
   },
 
   /**
@@ -163,5 +163,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  toAssignments: function () {
+    wx.navigateTo({
+      //Route to a student index linked to this teacher
+      url: "../lesson/lesson",
+    })
   }
 })

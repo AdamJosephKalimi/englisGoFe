@@ -1,27 +1,32 @@
 //app.js
 
 App({
+  loginAndGetAPIUserInfo: function() {
+    var that = this
+    wx.login({
+      withCredentials: true,
+      success: function (res) {
+        var code = res.code
+        wx.getUserInfo({
+          success: function (res) {
+
+            that.globalData.userInfo = res.userInfo
+            that.sendCodeToBackend(code, res)
+
+            typeof cb == "function" && cb(that.globalData.userInfo)
+            console.log(that.globalData.userInfo)
+          }
+        })
+      }
+    })
+  },
   onLaunch: function () {
+    console.log("Launching!!!!")
     var that = this
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-      wx.login({
-        withCredentials: true,
-        success: function (res) {
-          var code = res.code
-          wx.getUserInfo({
-            success: function (res) {
-
-              that.globalData.userInfo = res.userInfo
-              that.sendCodeToBackend(code, res)
-
-              typeof cb == "function" && cb(that.globalData.userInfo)
-              console.log(that.globalData.userInfo)
-            }
-          })
-         }
-      })
+    this.loginAndGetAPIUserInfo()
   },
   getUserInfo:function(cb){
     var that = this;
@@ -29,16 +34,7 @@ App({
       typeof cb == "function" && cb(this.globalData.userInfo)
     }else{
       //调用登录接口
-      wx.login({
-        success: function () {
-          wx.getUserInfo({
-            success: function (res) {
-              that.globalData.userInfo = res.userInfo;
-              typeof cb == "function" && cb(that.globalData.userInfo)
-            }
-          })
-        }
-      });
+      this.loginAndGetAPIUserInfo()
     }
   },
   sendCodeToBackend: function (code, res) {
@@ -51,13 +47,16 @@ App({
         code: code,
         user: {
           username: res.userInfo.nickName,
-          user_avatar: res.userInfo.avatarUrl
+          avatar: res.userInfo.avatarUrl
         } },
       success: function (res) {
         console.log('done with sendCodeToBackend')
+        console.log(res)
+        that.globalData.is_teacher = res.data.is_teacher
         that.globalData.open_id = res.data.open_id
         that.globalData.username = res.data.username
         that.globalData.authentication_token = res.data.authentication_token
+        console.log("Global Data now:")
         console.log(that.globalData)
 
       },

@@ -34,7 +34,8 @@ Page({
       url: endpoint,
       data: {
         user_open_id: openId,
-        user_token: authToken
+        user_token: authToken,
+        from_teacher: false
       },
       success: function (res) {
         // res contains all the HTTP request data

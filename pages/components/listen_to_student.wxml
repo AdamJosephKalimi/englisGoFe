@@ -1,10 +1,9 @@
 <view class='rcrd-bckgrnd'>
-    <text>Listen to your student</text>
+    <text>Listen to the submission</text>
     
-    <button bindtap="playButtonClicked" class='record_btn_1'>
+    <button bindtap="playButtonClicked" class='record_btn_1' data-recording_file="{{lesson.submission.voice}}">
     
-      <view wx:if="{{!is_playing}}"> play</view>
-      <view wx:elif="{{is_playing}}"> stop</view>   
+      <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>  
     
     </button>
 
