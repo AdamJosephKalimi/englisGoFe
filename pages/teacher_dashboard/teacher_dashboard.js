@@ -30,15 +30,25 @@ Page({
    */
   onLoad: function (options) {
     // get student_id, student photo (which is currently not being saved to the backend)
+    // wx.request({
+    //   url: 'http://localhost:3000/api/v1/users',
+    //   data: {
+    //     user_open_id: openId,
+    //     user_token: authToken,
+    //     user_photo:
+    //   },
+    // })
   },
 
   postNewLesson: function (assignmentId) {
     console.log(assignmentId)
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
+    var domain = app.globalData.dev_domain
+
     wx.request({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/lessons', // change to Heroku when ready
+      url: `${domain}/api/v1/lessons`,
       data: {
         user_open_id: openId,
         user_token: authToken,
@@ -78,7 +88,7 @@ Page({
     })
   },
 
-  
+
   toMyStudents: function () {
     wx.navigateTo({
       //Route to a student index linked to this teacher
