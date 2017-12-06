@@ -99,14 +99,14 @@ Page({
       uptoken:"PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:f6iSqqM_s10YphHPt9GVlzSBal0=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0dm9pY2Uuc2lsayIsImRlYWRsaW5lIjoxNTEyNjExNDc3LCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjE4Il0sImdsb2JhbCI6ZmFsc2V9",
       domain: 'http://p0hdqjyyy.bkt.clouddn.com',
       shouldUseQiniuFileName: false,
-      key: 'testvoice.silk'
+      key: 'thebestvoice.silk'
     }
     );
   },
 
   downloadVoice: function (){
     wx.downloadFile({
-      url: 'http://p0hdqjyyy.bkt.clouddn.com/testvoice.silk',
+    url: 'http://p0hdqjyyy.bkt.clouddn.com/thebestvoice.silk',
     // `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
     success: function(res) {
 
