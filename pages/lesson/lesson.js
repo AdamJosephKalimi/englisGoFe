@@ -1,15 +1,5 @@
 const qiniuUploader = require("../../utils/qiniuUploader.js");
 
-function initQiniu() {
-  var options = {
-    region: 'ECN',
-    uptoken: `${qiniuUpToken}`
-    domain: 'http://p0hdqjyyy.bkt.clouddn.com',
-    shouldUseQiniuFileName: false
-  };
-  qiniuUploader.init(options);
-}
-
 var filePath;
 var app = getApp()
 
@@ -32,6 +22,18 @@ Page({
     mode: 'aspectFit',
     text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
   }],
+
+  initQiniu: function() {
+    var that = this
+    // var qiniuUpToken = that.data.qiniuUpToken
+    var options = {
+      region: 'ECN',
+      uptoken: `${that.data.qiniuUpToken}`,
+      domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+      shouldUseQiniuFileName: false
+    };
+    qiniuUploader.init(options);
+  },
 
   buttonClicked: function() {
     let is_recording = this.data.is_recording
@@ -89,6 +91,9 @@ Page({
   uploadVoice: function() {
     var that = this
     var filePath = that.data.recording_path
+    // not sure if this is the best way for this to work dynamically
+    var qiniuUpToken = that.data.qiniuUpToken
+    var qiniuKey = that.data.qiniuKey
 
     qiniuUploader.upload(filePath, (res) => {
       console.log(res);
@@ -101,6 +106,7 @@ Page({
       console.error('error: ' + JSON.stringify(error));
     },
     {
+      // can the var qiniuKey be passed in as such??
       region: 'ECN',
       uptoken: `${qiniuUpToken}`
       domain: 'http://p0hdqjyyy.bkt.clouddn.com',
@@ -125,7 +131,24 @@ Page({
     })
   },
   onReady: function () {
-    initQiniu();
+    wx.request({
+      url: `${domain}/api/v1/file_upload`
+      success: function (res) {
+        // res contains all the HTTP request data
+        console.log('success!' + res.statusCode);
+        console.log(res.data);
+        // Update local data storage
+        let qiniu = res.data
+        that.setData({
+           qiniuUpToken: qiniu.token,
+           qiniuKey: qiniu.key
+        })
+        initQiniu();
+      },
+      fail: function (res) {
+        console.log('failed!' + res.statusCode);
+      },
+    })
   },
 
   onLoad: function (options) {
@@ -164,23 +187,6 @@ Page({
         console.log(res.data);
         console.log('completed!' + res.statusCode);
       }
-    })
-    wx.request({
-      url: `${domain}/api/v1/file_upload`
-      success: function (res) {
-        // res contains all the HTTP request data
-        console.log('success!' + res.statusCode);
-        console.log(res.data);
-        // Update local data storage
-        let qiniu = res.data
-        that.setData({
-           qiniuUpToken: qiniu.token,
-           qiniuKey: qiniu.key
-        })
-      },
-      fail: function (res) {
-        console.log('failed!' + res.statusCode);
-      },
     })
   },
 
