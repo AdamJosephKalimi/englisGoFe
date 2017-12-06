@@ -55,7 +55,7 @@ Page({
     })
 
   },
-  // imbed within fetch assignments?
+
   set_box_classes: function (lessons) {
       console.log("in here")
     console.log(lessons)
@@ -81,53 +81,14 @@ Page({
     });
   },
 
-  handleCardTap: function(event) {
-    let lessonId = event.currentTarget.dataset.lesson_id
-    let id = event.currentTarget.dataset.id
+  toAssignments: function(event) {
+    var that = this
+    let id = event.currentTarget.dataset.ass_id
 
     wx.navigateTo({
-        url: `../form/form?lesson=${lessonId}`  // assignment=${assignmentId}&
+        url: `../lesson/lesson?lesson=${id}`  //
       })
-
-    // if (!lessonId) {
-    //   console.log('Hasn\'t started the assignment yet, creating one')
-    //   this.postNewLesson(id)
-    // } else {
-    //   console.log('Student already started or finished, directly navigating to the page')
-    // }
   },
-
-  // this needs to happen when teacher shares?!
-  //
-  // postNewLesson: function (assignmentId) {
-  //   console.log(assignmentId)
-  //   var openId = app.globalData.open_id
-  //   var authToken = app.globalData.authentication_token
-  //   wx.request({
-  //     method: 'POST',
-  //     url: 'http://localhost:3000/api/v1/lessons', // change to Heroku when ready
-  //     data: {
-  //       user_open_id: openId,
-  //       user_token: authToken,
-  //       lesson: {
-  //         assignment_id: assignmentId
-  //       }
-  //     },
-  //     success: function (response){
-  //       let res = response.data;
-  //       var lessonId = res.id
-  //       var assignmentId = res.assignment_id
-  //       console.log(response.data)
-  //       wx.navigateTo({
-  //         url: `../form/form?assignment=${assignmentId}&lesson=${lessonId}`
-  //       })
-  //     },
-  //     fail: function (res) {
-  //       console.log(res.data);
-  //       console.log('failed!' + res.statusCode);
-  //     }
-  //   })
-  // },
 
   getUserInfo: function(e) {
     console.log(e)
