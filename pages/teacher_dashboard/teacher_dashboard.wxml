@@ -13,7 +13,7 @@
   <view class="avatar-container">
   <!--code the avatars that bring in the avatars of the various students assigned to a particular teacher  -->
     <block  wx:for="{{students}}" wx:for-item="element" wx:key="index">
-       <image src="{{element.src}}" class="studentAvatar" bindtap='navProfile' id="{{element.id}}"></image> 
+       <image src="{{element.src}}" class="studentAvatar" bindtap='studentAvatar' bindtap='navProfile' id="{{element.id}}"></image> 
     </block>
   </view>
 
@@ -23,7 +23,7 @@
     <!--Need to code a color to overide the button which holds the 
     current day's assignment.  -->
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row1'>1</navigator></li>
+      <li><navigator bindtap='toLesson' url="/pages/form/form" class="btn-assignments" id='row1'>1</navigator></li>
       <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row2'>2</navigator></li>
       <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row3'>3</navigator></li>
       <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row4'>4</navigator></li>

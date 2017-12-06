@@ -1,5 +1,8 @@
 <view class='rcrd-bckgrnd'>
+  <view class='btn_directions'>
     <text>Hear your teacher's feedback</text>
+    <text>听老师的反馈</text>
+  </view>
 
     <button bindtap="playButtonClicked" class='record_btn_1'>
     

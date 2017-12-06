@@ -80,32 +80,6 @@ Page({
 
   },
 
-  startPlaying: function () {
-    var that = this
-
-    wx.startPlaying({
-      success: function (res) {
-        that.setData({
-          recording_path: res.tempFilePath
-        })
-        console.log(that.data.recording_path)
-        setTimeout(function () {
-          wx.pauseVoice()
-        }, 200000)
-      }
-    })
-  },
-  stopPlaying: function () {
-    wx.stopPlay()
-  },
-  playRecording: function () {
-    wx.playVoice({
-      filePath: that.data.recording_path,
-      complete: function () {
-      }
-    })
-  },
-
   uploadVoice: function() {
     var that = this
     var filePath = that.data.recording_path
@@ -132,7 +106,8 @@ Page({
 
   downloadVoice: function (){
     wx.downloadFile({
-    url: `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
+      url: 'http://p0hdqjyyy.bkt.clouddn.com/testvoice.silk',
+    // `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
     success: function(res) {
 
         if (res.statusCode === 200) {

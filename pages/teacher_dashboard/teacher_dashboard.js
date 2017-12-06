@@ -80,15 +80,22 @@ Page({
   onShareAppMessage: function () {
   
   },
-  toAssignments: function () {
+  toLesson: function () {
     wx.navigateTo({
-      url: "../form/form",
+      url: "../lesson/lesson",
     })
   },
+  studentAvatar: function () {
+    wx.navigateTo({
+      url: "../teacher_student_avatar/teacher_student_avatar",
+    })
+  },
+
+  
   toMyStudents: function () {
     wx.navigateTo({
       //Route to a student index linked to this teacher
-      //url: "../assignments/assignments",
+      url: "../teacher_student_avatar/teacher_student_avatar",
     })
   }
 })
