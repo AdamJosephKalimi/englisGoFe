@@ -1,9 +1,13 @@
 {
   "pages": [
-    "pages/teacher_student_select/teacher_student_select",
-    "pages/student_dashboard/student_dashboard",
     "pages/lesson/lesson",
+    "pages/teacher_student_select/teacher_student_select",
+    
     "pages/teacher_dashboard/teacher_dashboard",
+    
+    "pages/student_dashboard/student_dashboard",
+    
+    
     "pages/teacher_student_dashboard/teacher_student_dashboard",
 "pages/teacher_registration_submission_form/teacher_registration_submission_form",
     "pages/teacher_post_register/teacher_post_register",    

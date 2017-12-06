@@ -5,7 +5,7 @@ var app = getApp()
 
 Page({
   data: {
-    lesson_id: 67,
+    lesson_id: 26,
     content: null,
     voice: null,
     lesson: null,
@@ -27,6 +27,7 @@ Page({
     var that = this
     // var qiniuUpToken = that.data.qiniuUpToken
     var options = {
+
       region: 'ECN',
       uptoken: `${that.data.qiniuUpToken}`,
       domain: 'http://p0hdqjyyy.bkt.clouddn.com',
@@ -35,29 +36,58 @@ Page({
     qiniuUploader.init(options);
   },
 
-  buttonClicked: function() {
+  studentRecordClicked: function() {
     let is_recording = this.data.is_recording
     console.log("recording?" + is_recording)
     if (is_recording) {
       this.stopRecording()
     } else {
-      this.startRecording()
+      this.startStudentRecording()
     }
 
     this.setData({ is_recording: !is_recording })
 
   },
 
-  startRecording: function () {
+  startStudentRecording: function () {
     var that = this
     wx.startRecord({
       success: function (res) {
         that.setData({
-          recording_path: res.tempFilePath
+          student_recording_path: res.tempFilePath
         })
         console.log('start recording finished')
-        that.playRecording()
-        console.log(that.data.recording_path)
+        that.playRecording(res.tempFilePath)
+        console.log(that.data.student_recording_path)
+
+        setTimeout(function () {
+          wx.pauseVoice()
+        }, 200000)
+      }
+    })
+  },
+  teacherRecordClicked: function () {
+    let is_recording = this.data.is_recording
+    console.log("recording?" + is_recording)
+    if (is_recording) {
+      this.stopRecording()
+    } else {
+      this.startTeacherRecording()
+    }
+
+    this.setData({ is_recording: !is_recording })
+
+  },
+  startTeacherRecording: function () {
+    var that = this
+    wx.startRecord({
+      success: function (res) {
+        that.setData({
+          teacher_recording_path: res.tempFilePath
+        })
+        console.log('start recording finished')
+        that.playRecording(res.tempFilePath)
+        console.log(that.data.teacher_recording_path)
 
         setTimeout(function () {
           wx.pauseVoice()
@@ -68,27 +98,38 @@ Page({
   stopRecording: function () {
     wx.stopRecord()
   },
-  playRecording: function () {
+  playRecording: function (recording_path) {
     var that = this
     wx.playVoice({
-      filePath: that.data.recording_path,
+      filePath: recording_path,
       complete: function () {
       }
     })
   },
 ////////////////////////////////////////////////////
-  playButtonClicked: function () {
-    let is_playing = this.data.is_playing
-    console.log("playing?" + is_playing)
-    if (is_playing) {
-      this.startPlaying()
-    } else {
-      this.startPlaying()
-    }
+  playButtonClicked: function (e) {
+    this.playRecording(e.currentTarget.dataset.recording_file)
+  },
 
-    this.setData({ is_playing: !is_playing })
+  saveLesson: function (e) {
+    // put: lessons/lesson_id 
+    // data: submission_voice: student_recording_path
+    // data: grading_voice: teacher_recording_path
+    console.log("saving lesson!!!")
+    let domain = app.globalData.dev_domain
+
+
+    wx.request({
+      url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
+      method: 'put',
+      data: {
+        submission_voice: this.data.student_recording_path,
+        grading_voice: this.data.teacher_recording_path
+      }
+    })
 
   },
+////////////////////////////////////////////////////
 
   uploadVoice: function() {
     var that = this
@@ -132,7 +173,10 @@ Page({
       }
     })
   },
-  onReady: function () {
+  setQiniu: function () {
+    var that = this
+    var domain = app.globalData.dev_domain
+
     wx.request({
       url: `${domain}/api/v1/file_upload`,
       success: function (res) {
@@ -142,20 +186,27 @@ Page({
         // Update local data storage
         let qiniu = res.data
         that.setData({
-           qiniuUpToken: qiniu.token,
-           qiniuKey: qiniu.key
+          qiniuUpToken: qiniu.token,
+          qiniuKey: qiniu.key
         })
-        initQiniu();
+        that.initQiniu();
       },
       fail: function (res) {
         console.log('failed!' + res.statusCode);
       },
     })
   },
+  onReady: function () {
+    // this.setQiniu()
+  },
 
   onLoad: function (options) {
 
-    this.initQiniu();
+    console.log("global data setting!!! ")
+    console.log(app.globalData)
+    // this.setData({ is_teacher: app.globalData.is_teacher })
+
+    // this.initQiniu();
 
     var that = this
     var id = that.data.lesson_id

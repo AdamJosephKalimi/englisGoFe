@@ -1,3 +1,5 @@
+var app = getApp();
+
 // pages/teacher_dashboard/teacher_dashboard.js
 Page({
 
@@ -9,7 +11,6 @@ Page({
       mode: 'aspectFit',
       text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
     }],
-    teacher_img: '../../image/Batch 122-32.jpg',
     students: [
       { src: '../../image/Batch 122-32.jpg' },
       { src: '../../image/Batch 122-32.jpg' },
@@ -29,17 +30,32 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // get student_id, student photo (which is currently not being saved to the backend)
-    // wx.request({
-    //   url: 'http://localhost:3000/api/v1/users',
-    //   data: {
-    //     user_open_id: openId,
-    //     user_token: authToken,
-    //     user_photo:
-    //   },
-    // })
-  },
 
+  },
+  onReady: function (options) {
+    this.setData({ teacher_img: app.globalData.userInfo.avatarUrl })
+
+
+    var openId = app.globalData.open_id
+    var authToken = app.globalData.authentication_token
+    var domain = app.globalData.dev_domain
+    var endpoint = `${domain}/api/v1/lessons`
+
+    // get student_id, student photo (which is currently not being saved to the backend)
+    wx.request({
+      url: endpoint,
+      data: {
+        user_open_id: openId,
+        user_token: authToken,
+        from_teacher: true
+      },
+      success: function (res) {
+        console.log(res)
+      },
+      fail: function (res) {
+      }
+    })
+  },
   postNewLesson: function (assignmentId) {
     console.log(assignmentId)
     var openId = app.globalData.open_id
