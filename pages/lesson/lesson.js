@@ -5,7 +5,7 @@ var app = getApp()
 
 Page({
   data: {
-    assignment: null,
+    lesson_id: 67,
     content: null,
     voice: null,
     lesson: null,
@@ -40,7 +40,6 @@ Page({
     console.log("recording?" + is_recording)
     if (is_recording) {
       this.stopRecording()
-      this.playRecording()
     } else {
       this.startRecording()
     }
@@ -56,7 +55,10 @@ Page({
         that.setData({
           recording_path: res.tempFilePath
         })
+        console.log('start recording finished')
+        that.playRecording()
         console.log(that.data.recording_path)
+
         setTimeout(function () {
           wx.pauseVoice()
         }, 200000)
@@ -64,7 +66,7 @@ Page({
     })
   },
   stopRecording: function () {
-      wx.stopRecord()
+    wx.stopRecord()
   },
   playRecording: function () {
     var that = this
@@ -152,16 +154,16 @@ Page({
   },
 
   onLoad: function (options) {
-    console.log(options)
+
+    initQiniu();
+
     var that = this
-    var id = options.assignment
-    that.setData({
-      lesson_id: options.lesson
-    })
+    var id = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
     var domain = app.globalData.dev_domain
-    var endpoint = `${domain}/api/v1/assignments/${id}`
+    var endpoint = `${domain}/api/v1/lessons/${id}` // `https://english-go.herokuapp.com/api/v1/lessons/${id}`
+
     wx.request({
       url: endpoint,
       data: {
@@ -171,12 +173,12 @@ Page({
       success: function (res) {
         // res contains all the HTTP request data
         console.log('success!' + res.statusCode);
-        console.log(res.data);
+        let lesson = res.data
+        console.log(lesson);
+
         // Update local data storage
-        let assignment = res.data
         that.setData({
-           content: assignment.content,
-           voice: assignment.voice
+           lesson: lesson
         })
       },
       fail: function (res) {
@@ -192,7 +194,6 @@ Page({
 
   bindSubmission: function(event){
     var that = this
-    //  var assignmentId = that.assignment
     var lessonId = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
