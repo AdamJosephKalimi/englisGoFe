@@ -29,60 +29,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // get student_id, student photo (which is currently not being saved to the backend)
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  postNewLesson: function (assignmentId) {
+    console.log(assignmentId)
+    var openId = app.globalData.open_id
+    var authToken = app.globalData.authentication_token
+    wx.request({
+      method: 'POST',
+      url: 'http://localhost:3000/api/v1/lessons', // change to Heroku when ready
+      data: {
+        user_open_id: openId,
+        user_token: authToken,
+        massCreate: true,
+        lesson: {
+          assignment_id: assignmentId
+        }
+      },
+      success: function (response){
+        let res = response.data;
+        var id = res.id
+        console.log(response.data)
+        wx.navigateTo({
+          url: `../lesson/lesson?lesson=${id}`
+        })
+      },
+      fail: function (res) {
+        console.log(res.data);
+        console.log('failed!' + res.statusCode);
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
-  },
   toAssignments: function () {
+    let id = event.currentTarget.dataset.ass_id
+    postNewLesson(id)
+
+    // this acts as the default route
+    // no else case if the lesson for that assignment as already been created
     wx.navigateTo({
-      url: "../form/form",
+      url: `../lesson/lesson?assignment=${id}`,
     })
   },
   toMyStudents: function () {

@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/lesson/lesson",
-    "pages/assignments/assignments",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/teacher_student_dashboard/teacher_student_dashboard",
     "pages/student_dashboard/student_dashboard",
