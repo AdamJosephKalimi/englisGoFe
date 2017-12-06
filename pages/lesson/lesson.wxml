@@ -1,0 +1,69 @@
+<!--  This page will be dynamic. It will change depending on if the user is logged in as a teacher or as a student.  -->
+
+<view class="container">
+  <view class="lesson_title">Lesson title
+  </view>
+  <view>
+    <text class='assignment_text'>
+      (This text will be the lesson)
+      (Our topic for today will be talking about motivation.
+      Please make sure to create 1. Written and 2. Spoken entry for me to be able to give you feedback on both.
+
+      We all need to be motivated.  Whether you need to be motivated for work, you want to achieve a personal goal (like learning a language), or overcome       a challenge, we all need motivational boost from time to time.
+
+      TO DO:
+      Why does this seem to work so well for you?
+      If you don't have a fitness routine, write out your fitness goals.
+
+      Please make sure that you complete the written and spoken portions so that I can give you good
+      feedback on both. If you have any questions about the assignment or words, please let me know)      
+    </text>
+  </view>
+
+
+
+<view wx:if="{{If a teacher is listening and giving feedback}}"><include src="../components/listen_to_student.wxml"/>
+  <include src="../components/teacher_record.wxml"/></view>
+<view wx:elif="{{If a teacher is listening to feedback}}"><include src="../components/listen_to_student.wxml"/>
+  <include src="../components/teacher_record.wxml"/></view>
+<view wx:else><include src="../components/recording_form.wxml"/></view>
+  <!--Conditionally render partials  -->
+ 
+  <!--If it's a lesson  -->
+  <!-- <include src="../components/recording_form.wxml"/> -->
+
+  <!-- If a teacher is listening and giving feedback -->
+  <!-- <include src="../components/listen_to_student.wxml"/>
+  <include src="../components/teacher_record.wxml"/> -->
+
+  <!-- If a teacher is listening to feedback -->
+  <!-- <include src="../components/listen_to_student.wxml"/>
+  <include src="../components/listen_to_teacher.wxml"/> -->
+
+
+  <view>
+    <button class="submit-btn">Submit</button>
+  </view>
+
+
+
+  <view id="ipa_container">
+    <view class="words_1">
+      <ul>
+        <li>Hello ; Hehlow</li>
+        <li>Goodbye ; Gudbai</li>
+        <li>Later ; Laitr</li>
+      </ul>
+    </view>
+    <view class="words_2">
+      <ul>
+        <li>world ; Werldeh</li>
+        <li>Moon ; Mu¨n</li>
+        <li>Sun ; suhn</li>
+      </ul>
+    </view>
+  </view>
+
+
+
+</view>
