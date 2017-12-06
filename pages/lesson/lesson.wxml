@@ -28,15 +28,6 @@
   <include src="../components/listen_to_teacher.wxml"/>
 </view>
 
-
-///////////////////////////////////////////////
-<!-- <view wx:if="{{If a teacher is listening and giving feedback}}"><include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/></view>
-<view wx:elif="{{If a teacher is listening to feedback}}"><include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/></view>
-<view wx:else><include src="../components/recording_form.wxml"/></view> -->
- 
-
 <view wx:else><include src="../components/student_record.wxml"/></view>
 
 
