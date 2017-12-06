@@ -22,14 +22,13 @@
 
 
 <view wx:if="{{lesson.submission}}"><include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/></view> 
+  <include src="../components/teacher_record.wxml"/></view>
 
 <view wx:elif="{{lesson.grading}}"><include src="../components/listen_to_student.wxml"/>
   <include src="../components/listen_to_teacher.wxml"/>
 </view>
 
 <view wx:else><include src="../components/student_record.wxml"/></view>
-
 
   <view>
     <button class="submit-btn" bindtap='toMyStudents'>Submit</button>

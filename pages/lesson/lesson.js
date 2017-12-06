@@ -1,16 +1,5 @@
 const qiniuUploader = require("../../utils/qiniuUploader.js");
 
-function initQiniu() {
-  var options = {
-    region: 'ECN',
-    uptoken: "PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:f6iSqqM_s10YphHPt9GVlzSBal0=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0dm9pY2Uuc2lsayIsImRlYWRsaW5lIjoxNTEyNjExNDc3LCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjE4Il0sImdsb2JhbCI6ZmFsc2V9",
-    domain: 'http://p0hdqjyyy.bkt.clouddn.com',
-
-    shouldUseQiniuFileName: false
-  };
-  qiniuUploader.init(options);
-}
-
 var filePath;
 var app = getApp()
 
@@ -24,7 +13,8 @@ Page({
     storage_path: null,
     storage_key: null,
     storage_hash: null,
-
+    qiniuUpToken: null,
+    qiniuKey: null,
     userInfo: {},
     is_recording: false
   },
@@ -32,6 +22,18 @@ Page({
     mode: 'aspectFit',
     text: 'aspectFit：保持纵横比缩放图片，使图片的长边能完全显示出来'
   }],
+
+  initQiniu: function() {
+    var that = this
+    // var qiniuUpToken = that.data.qiniuUpToken
+    var options = {
+      region: 'ECN',
+      uptoken: `${that.data.qiniuUpToken}`,
+      domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+      shouldUseQiniuFileName: false
+    };
+    qiniuUploader.init(options);
+  },
 
   buttonClicked: function() {
     let is_recording = this.data.is_recording
@@ -91,6 +93,9 @@ Page({
   uploadVoice: function() {
     var that = this
     var filePath = that.data.recording_path
+    // not sure if this is the best way for this to work dynamically
+    var qiniuUpToken = that.data.qiniuUpToken
+    var qiniuKey = that.data.qiniuKey
 
     qiniuUploader.upload(filePath, (res) => {
       console.log(res);
@@ -103,11 +108,12 @@ Page({
       console.error('error: ' + JSON.stringify(error));
     },
     {
+      // can the var qiniuKey be passed in as such??
       region: 'ECN',
-      uptoken:"PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:f6iSqqM_s10YphHPt9GVlzSBal0=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0dm9pY2Uuc2lsayIsImRlYWRsaW5lIjoxNTEyNjExNDc3LCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjE4Il0sImdsb2JhbCI6ZmFsc2V9",
+      uptoken: `${qiniuUpToken}`
       domain: 'http://p0hdqjyyy.bkt.clouddn.com',
       shouldUseQiniuFileName: false,
-      key: 'thebestvoice.silk'
+      key: `${qiniuKey}`
     }
     );
   },
@@ -126,14 +132,37 @@ Page({
       }
     })
   },
+  onReady: function () {
+    wx.request({
+      url: `${domain}/api/v1/file_upload`
+      success: function (res) {
+        // res contains all the HTTP request data
+        console.log('success!' + res.statusCode);
+        console.log(res.data);
+        // Update local data storage
+        let qiniu = res.data
+        that.setData({
+           qiniuUpToken: qiniu.token,
+           qiniuKey: qiniu.key
+        })
+        initQiniu();
+      },
+      fail: function (res) {
+        console.log('failed!' + res.statusCode);
+      },
+    })
+  },
 
   onLoad: function (options) {
+
     initQiniu();
+
     var that = this
     var id = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var endpoint = `http://localhost:3000/api/v1/lessons/${id}` // `https://english-go.herokuapp.com/api/v1/lessons/${id}`
+    var domain = app.globalData.dev_domain
+    var endpoint = `${domain}/api/v1/lessons/${id}` // `https://english-go.herokuapp.com/api/v1/lessons/${id}`
 
     wx.request({
       url: endpoint,
@@ -168,15 +197,15 @@ Page({
     var lessonId = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-
     var voice_submission = that.data.storage_path
     var voice_key = that.data.storage_key
+    var domain = app.globalData.dev_domain
 
     that.uploadVoice()
 
     wx.request({
       method: 'POST',
-      url: 'http://localhost:3000/api/v1/submissions', // 'https://english-go.herokuapp.com/api/v1/submissions',
+      url: `${domain}/api/v1/submissions`,
       data: {
         user_open_id: openId,
         user_token: authToken,

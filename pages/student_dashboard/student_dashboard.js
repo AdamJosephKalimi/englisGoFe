@@ -28,8 +28,8 @@ Page({
     // var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments'
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    console.log('loading lessons/assignments')
-    var endpoint = 'http://localhost:3000/api/v1/lessons'
+    var domain = app.globalData.dev_domain
+    var endpoint = `${domain}/api/v1/lessons`
     wx.request({
       url: endpoint,
       data: {
