@@ -20,11 +20,26 @@ Page({
     voice: null,
     lesson: null,
     recording_path: null,
-    userInfo: {}
+    userInfo: {},
+    is_recording: false
+  },
+
+  buttonClicked: function() {
+    let is_recording = this.data.is_recording
+    console.log("recording?" + is_recording)
+    if (is_recording) {
+      this.stopRecording()
+    } else {
+      this.startRecording()
+    }
+
+    this.setData({ is_recording: !is_recording })
+
   },
 
   startRecording: function () {
     var that = this
+
     wx.startRecord({
       success: function (res) {
         that.setData({
@@ -39,6 +54,45 @@ Page({
   },
   stopRecording: function () {
       wx.stopRecord()
+  },
+  playRecording: function () {
+    wx.playVoice({
+      filePath: that.data.recording_path,
+      complete: function () {
+      }
+    })
+  },
+////////////////////////////////////////////////////
+  playButtonClicked: function () {
+    let is_playing = this.data.is_playing
+    console.log("playing?" + is_playing)
+    if (is_playing) {
+      this.startPlaying()
+    } else {
+      this.startPlaying()
+    }
+
+    this.setData({ is_playing: !is_playing })
+
+  },
+
+  startPlaying: function () {
+    var that = this
+
+    wx.startPlaying({
+      success: function (res) {
+        that.setData({
+          recording_path: res.tempFilePath
+        })
+        console.log(that.data.recording_path)
+        setTimeout(function () {
+          wx.pauseVoice()
+        }, 200000)
+      }
+    })
+  },
+  stopPlaying: function () {
+    wx.stopPlay()
   },
   playRecording: function () {
     wx.playVoice({

@@ -1,0 +1,58 @@
+.container {
+  padding-top: 100rpx;
+  padding-right: 36rpx;
+  padding-left: 36rpx; 
+}
+
+.assignment_text {
+  margin-bottom: 36rpx;
+}
+
+.rcrd-bckgrnd {
+  margin-top: 200rpx;
+  
+}
+
+.rcrd-bckgrnd {
+  background: #9B9B9B;
+  width: 320px;
+  /* opacity: 0.7; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.record_btn_1 {
+  background-color: #4A90E2;
+  border-radius: 50%;
+  width: 160rpx;
+  height: 160rpx;
+  opacity: 1.0;
+}
+
+.record_btn_2 {
+  background-color: #4A90E2;
+  border-radius: 50%;
+  width: 160rpx;
+  height: 160rpx;
+}
+
+#ipa_container {
+  display: flex;
+   justify-content: space-between; 
+  height: 100%;
+  width: 650rpx;
+}
+
+  .words_1 {
+  font-family: AvenirNext-Medium;
+  font-size: 14px;
+  color: #646161;
+  line-height: 26px;
+} 
+
+ .words_2 {
+  font-family: AvenirNext-Medium;
+  font-size: 14px;
+  color: #646161;
+  line-height: 26px;
+} 
