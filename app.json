@@ -1,22 +1,21 @@
 {
-  "pages": [  
-    "pages/student_dashboard/student_dashboard",
-    "pages/teacher_student_dashboard/teacher_student_dashboard",
+  "pages": [
+    "pages/lesson/lesson",
+    "pages/assignments/assignments",
     "pages/teacher_dashboard/teacher_dashboard",
-    
-    "pages/form/form",
-"pages/teacher_registration_submission_form/teacher_registration_submission_form",
+    "pages/teacher_student_dashboard/teacher_student_dashboard",
+    "pages/student_dashboard/student_dashboard",
+    "pages/teacher_registration_submission_form/teacher_registration_submission_form",
     "pages/teacher_post_register/teacher_post_register",
     "pages/teacher_student_select/teacher_student_select",
-    "pages/assignments/assignments",
     "pages/student_pre_test/student_pre_test",
-"pages/student_post_placement_test/student_post_placement_test",
+    "pages/student_post_placement_test/student_post_placement_test",
     "pages/student_placement_test/student_placement_test",
     "pages/landing_page/landing_page",
-    "pages/components_1/buttons",
+    "pages/components/buttons",
     "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/logs/logs",
+    "pages/submission/submission"
   ],
   "window": {
     "navigationBarBackgroundColor": "#4A90E2",

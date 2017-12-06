@@ -1,3 +1,4 @@
+<!--pages/submission/submission.wxml-->
 <!--  This page will be dynamic. It will change depending on if the user is logged in as a teacher or as a student.  -->
 
 <view class="container">
@@ -22,23 +23,8 @@
 
 
 
-<view wx:if="{{If a teacher is listening and giving feedback}}"><include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/></view>
-<view wx:elif="{{If a teacher is listening to feedback}}"><include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/></view>
-<view wx:else><include src="../components/recording_form.wxml"/></view>
-  <!--Conditionally render partials  -->
- 
-  <!--If it's a lesson  -->
-  <!-- <include src="../components/recording_form.wxml"/> -->
+  <include src="../components/student_record.wxml"/>
 
-  <!-- If a teacher is listening and giving feedback -->
-  <!-- <include src="../components/listen_to_student.wxml"/>
-  <include src="../components/teacher_record.wxml"/> -->
-
-  <!-- If a teacher is listening to feedback -->
-  <!-- <include src="../components/listen_to_student.wxml"/>
-  <include src="../components/listen_to_teacher.wxml"/> -->
 
 
   <view>
@@ -65,3 +51,4 @@
   </view>
 
 </view>
+
