@@ -13,7 +13,7 @@
   <view class="avatar-container">
   <!--code the avatars that bring in the avatars of the various students assigned to a particular teacher  -->
     <block  wx:for="{{students}}" wx:for-item="element" wx:key="index">
-       <image src="{{element.src}}" class="studentAvatar" bindtap='studentAvatar' bindtap='navProfile' id="{{element.id}}"></image> 
+       <image src="{{element.src}}" class="studentAvatar" bindtap='studentAvatar' id="{{element.id}}"></image> 
 
     </block>
   </view>

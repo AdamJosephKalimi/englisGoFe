@@ -82,17 +82,17 @@ Page({
       url: `../lesson/lesson?assignment=${id}`,
     })
   },
+  // studentAvatar: function () {
+  //   wx.navigateTo({
+  //     url: "../teacher_student_avatar/teacher_student_avatar",
+  //   })
+  // },
+
+
   studentAvatar: function () {
     wx.navigateTo({
-      url: "../teacher_student_avatar/teacher_student_avatar",
-    })
-  },
-
-
-  toMyStudents: function () {
-    wx.navigateTo({
       //Route to a student index linked to this teacher
-      url: "../teacher_student_avatar/teacher_student_avatar",
+      url: "../teacher_student_dashboard/teacher_student_dashboard",
     })
   }
 })

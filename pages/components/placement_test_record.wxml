@@ -1,0 +1,19 @@
+<view class='rcrd-bckgrnd'>
+  <view class='student_directions'>
+    <text>Tap to record your answer</text>
+    <text>点击记录你的答案。</text>
+  </view>
+    <!--The user will push the record button  -->
+      <!--start/stop recording  -->
+  <view class='btn_class'>
+    <button bindtap="buttonClicked" class='record_btn_1'>
+      
+      <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>
+
+    </button>
+  </view>
+  <view class='warning'>
+    <text>There is a 1 minute time limit</text>
+    <text>有1分钟的时间限制</text>
+  </view>
+</view>

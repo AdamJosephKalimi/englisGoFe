@@ -69,12 +69,12 @@ Page({
   },
   pushStudent: function() {
     wx.navigateTo({
-      url: "../student_pre_test/student_pre_test",
+      url: "../student_dashboard/student_dashboard",
     })
   },
   pushTeacher: function () {
     wx.navigateTo({
-      url: "../teacher_registration_submission_form/teacher_registration_submission_form",
+      url: "../teacher_dashboard/teacher_dashboard",
     })
   }
 })

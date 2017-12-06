@@ -110,7 +110,7 @@ Page({
     {
       // can the var qiniuKey be passed in as such??
       region: 'ECN',
-      uptoken: `${qiniuUpToken}`
+      uptoken: `${qiniuUpToken}`,
       domain: 'http://p0hdqjyyy.bkt.clouddn.com',
       shouldUseQiniuFileName: false,
       key: `${qiniuKey}`
@@ -134,7 +134,7 @@ Page({
   },
   onReady: function () {
     wx.request({
-      url: `${domain}/api/v1/file_upload`
+      url: `${domain}/api/v1/file_upload`,
       success: function (res) {
         // res contains all the HTTP request data
         console.log('success!' + res.statusCode);
@@ -155,7 +155,7 @@ Page({
 
   onLoad: function (options) {
 
-    initQiniu();
+    this.initQiniu();
 
     var that = this
     var id = that.data.lesson_id
