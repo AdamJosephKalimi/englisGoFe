@@ -10,7 +10,7 @@
   </view>
 
   <view>
-    <image id='banner' style="width: 320px; height: 148px; background-color: #D8D8D8;" src="src"></image>
+    <image id='banner' style="width: 320px; height: 148px; background-color: #D8D8D8;" src="../../image/cityBanner.png"></image>
   </view>
 
   <view class='assignmentIndex'>

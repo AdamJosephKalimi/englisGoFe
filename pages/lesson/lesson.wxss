@@ -97,9 +97,9 @@
   padding: 10px;
 }
 
-.go{
+/* .go{
 
-}
+} */
 
 .submit-btn {
   color: #656565;
