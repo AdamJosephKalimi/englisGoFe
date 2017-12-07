@@ -33,15 +33,17 @@ Page({
 
   },
   onReady: function (options) {
-    this.setData({ teacher_img: app.globalData.userInfo.avatarUrl })
-
+    this.setData({
+      teacher_img: app.globalData.userInfo.avatarUrl,
+      teacher_name: app.globalData.userInfo.nickName
+    })
 
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.prod_domain
+    var domain = app.globalData.dev_domain
     var endpoint = `${domain}/api/v1/lessons`
 
-    // get student_id, student photo (which is currently not being saved to the backend)
+    // get student_id
     wx.request({
       url: endpoint,
       data: {
@@ -60,7 +62,7 @@ Page({
     console.log(assignmentId)
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.prod_domain
+    var domain = app.globalData.dev_domain
 
     wx.request({
       method: 'POST',
@@ -77,33 +79,23 @@ Page({
         let res = response.data;
         var id = res.id
         console.log(response.data)
-        wx.navigateTo({
-          url: `../lesson/lesson?lesson=${id}`
-        })
       },
       fail: function (res) {
-        console.log(res.data);
         console.log('failed!' + res.statusCode);
       }
     })
   },
 
-  toLessons: function () {
+  toLessons: function (event) {
     let id = event.currentTarget.dataset.ass_id
-    postNewLesson(id)
-
+    console.log(id)
+    this.postNewLesson(id)
     // this acts as the default route
     // no else case if the lesson for that assignment as already been created
     wx.navigateTo({
-      url: `../lesson/lesson?assignment=${id}`,
+      url: `../lesson/lesson?lesson=${id}`,
     })
   },
-  // studentAvatar: function () {
-  //   wx.navigateTo({
-  //     url: "../teacher_student_avatar/teacher_student_avatar",
-  //   })
-  // },
-
 
   studentAvatar: function () {
     wx.navigateTo({
