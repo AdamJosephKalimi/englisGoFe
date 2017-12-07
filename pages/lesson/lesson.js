@@ -124,6 +124,10 @@ Page({
 
     wx.request({
       url: `${domain}/api/v1/file_upload`,
+      data: {
+        user_open_id: app.globalData.open_id,
+        user_token: app.globalData.authentication_token
+      },
       success: function (res) {
         // res contains all the HTTP request data
         console.log('success!' + res.statusCode);
@@ -169,34 +173,10 @@ Page({
         console.log('success!' + res.statusCode);
         let lesson = res.data
         console.log(lesson);
-
+        console.log(lesson.assignment.id);
         // Update local data storage
         that.setData({
           lesson: lesson
-        })
-      },
-      fail: function (res) {
-        console.log("loading complications")
-        console.log('failed!' + res.statusCode);
-      }
-    })
-    //fetch assignments
-    wx.request({
-      url: `${domain}/api/v1/assignments/${lesson_id}`,
-      data: {
-        user_open_id: openId,
-        user_token: authToken
-      },
-      success: function (res) {
-        // res contains all the HTTP request data
-        console.log('success!' + res.statusCode);
-        let assignment = res.data
-        //debugger
-        // Update local data storage
-        that.setData({
-          content: assignment.content,
-          title: assignment.title,
-          keywords: assignment.keywords
         })
       },
       fail: function (res) {
@@ -215,7 +195,8 @@ Page({
     // data: grading_voice: teacher_recording_path
     console.log("saving lesson!!!")
     let domain = app.globalData.dev_domain
-
+    var openId = app.globalData.open_id
+    var authToken = app.globalData.authentication_token
     var qiniuUpToken = that.data.qiniuUpToken
     var qiniuKey = that.data.qiniuKey
 
@@ -232,9 +213,11 @@ Page({
           that.setData({uploaded_teacher_rec_path: res.voiceURL})
 
           wx.request({
-            url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
+            url: `${domain}/api/v1/lessons/${that.data.lesson_id}`,
             method: 'PUT',
             data: {
+              user_open_id: openId,
+              user_token: authToken,
               submission_voice: this.data.uploaded_student_rec_path,
               grading_voice: this.data.uploaded_teacher_rec_path
             },
@@ -261,12 +244,14 @@ Page({
           }
         );
       } else {
-        console.log("!aghoaaghag!")
-        console.log(this.data)
+        console.log("!RIGHT HERE!")
+        console.log(this.data.lesson.id)
         wx.request({
-          url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
+          url: `${domain}/api/v1/lessons/${this.data.lesson.id}`,
           method: 'PUT',
           data: {
+            user_open_id: openId,
+            user_token: authToken,
             submission_voice: this.data.uploaded_student_rec_path
           },
           success: function (response){

@@ -12,29 +12,33 @@ Page({
      this.setData({
       student_img: app.globalData.userInfo.avatarUrl,
       student_name: app.globalData.userInfo.nickName
-    })
+     })
+     // wx.request to /lessons?user_id=student_id
+     // on success: res.data.lessons.each { put lessons into the boxes, with data-lesson_id = lesson.id}
   },
 
   onLoad: function (options) {
     //this.checkFetchLessons()
     var that = this
-    // var endpoint = 'https://english-go.herokuapp.com/api/v1/assignments'
-    var openId = app.globalData.open_id
-    var authToken = app.globalData.authentication_token
+    that.setData({
+      openId: app.globalData.open_id,
+      authToken: app.globalData.authentication_token,
+      userId: app.globalData.user_id
+    })
     var domain = app.globalData.dev_domain
-    var endpoint = `${domain}/api/v1/lessons`
-    console.log(openId);
+    var endpoint = `${domain}/api/v1/lessons?user_id=${that.data.userId}`
+    // debugger
     wx.request({
       url: endpoint,
       data: {
-        user_open_id: openId,
-        user_token: authToken,
+        user_open_id: that.data.openId,
+        user_token: that.data.authToken,
+        user_id: that.data.userId,
         from_teacher: false
       },
       success: function (res) {
         // res contains all the HTTP request data
         console.log('success!' + res.statusCode);
-        // console.log(res.data);
         // Update local data storage
         let lessons = res.data
         console.log(lessons)
@@ -78,7 +82,7 @@ Page({
 
   toLessons: function(event) {
     var that = this
-    let id = event.currentTarget.dataset.dev_id
+    let id = event.currentTarget.dataset.ass_id
 
     wx.navigateTo({
         url: `../lesson/lesson?lesson=${id}`  //
