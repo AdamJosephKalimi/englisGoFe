@@ -71,8 +71,10 @@ App({
   },
   globalData: {
     userInfo: null,
+
     prod_domain: 'englishgo.shanghaiwogeng.com',
     // '101.37.31.161',
+
     dev_domain: 'http://localhost:3000'
   }
 })
