@@ -5,7 +5,7 @@ var filePath;
 
 Page({
   data: {
-    lesson_id: 29,
+    lesson_id: 30,
     content: null,
     voice: null,
     lesson: null,
@@ -102,6 +102,7 @@ Page({
   },
   playRecording: function (recording_path) {
     var that = this
+    console.log(recording_path)
     wx.playVoice({
       filePath: recording_path,
       complete: function () {
@@ -118,7 +119,7 @@ Page({
 
   setQiniu: function () {
     var that = this
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
 
     wx.request({
       url: `${domain}/api/v1/file_upload`,
@@ -155,7 +156,7 @@ Page({
     var id = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
     var endpoint = `${domain}/api/v1/lessons/${id}` // `https://english-go.herokuapp.com/api/v1/lessons/${id}`
 
     wx.request({
@@ -189,7 +190,7 @@ Page({
     // data: submission_voice: student_recording_path
     // data: grading_voice: teacher_recording_path
     console.log("saving lesson!!!")
-    let domain = app.globalData.dev_domain
+    let domain = app.globalData.prod_domain
 
     var qiniuUpToken = that.data.qiniuUpToken
     var qiniuKey = that.data.qiniuKey
