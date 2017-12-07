@@ -89,9 +89,8 @@ Page({
   toLessons: function (event) {
     let id = event.currentTarget.dataset.ass_id
     console.log(id)
-    this.postNewLesson(id)
-    // this acts as the default route
-    // no else case if the lesson for that assignment as already been created
+    // this.postNewLesson(id)
+    // totally gonna fake it here
     wx.navigateTo({
       url: `../lesson/lesson?lesson=${id}`,
     })

@@ -78,7 +78,7 @@ Page({
 
   toLessons: function(event) {
     var that = this
-    let id = event.currentTarget.dataset.ass_id
+    let id = event.currentTarget.dataset.dev_id
 
     wx.navigateTo({
         url: `../lesson/lesson?lesson=${id}`  //
