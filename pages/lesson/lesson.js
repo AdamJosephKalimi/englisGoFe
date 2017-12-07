@@ -144,22 +144,17 @@ Page({
   },
 
   onLoad: function (options) {
-
-
     console.log("global data setting!!! ")
     console.log(app.globalData)
     // this.setData({ is_teacher: app.globalData.is_teacher })
-
-    console.log(options.id)
-
     var that = this
     var id = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
     var domain = app.globalData.dev_domain
-    var endpoint = `${domain}/api/v1/lessons/`
-    var lesson_id = options.id
-
+    var lesson_id = options.lesson
+    var endpoint = `${domain}/api/v1/lessons/${lesson_id}`
+    // debugger
     wx.request({
       url: endpoint,
       data: {
@@ -242,7 +237,7 @@ Page({
           }
         );
       } else {
-        console.log("!!!")
+        console.log("!aghoaaghag!")
         console.log(this.data)
         wx.request({
           url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
