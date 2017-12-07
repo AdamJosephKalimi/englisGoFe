@@ -5,7 +5,7 @@ var filePath;
 
 Page({
   data: {
-    lesson_id: 30,
+    lesson_id: null,
     content: null,
     voice: null,
     lesson: null,
@@ -17,8 +17,7 @@ Page({
     qiniuKey: null,
     student_recording_path: null,
     teacher_recording_path: null,
-    userInfo: {},
-    is_recording: false
+    is_recording: false,
   },
   array: [{
     mode: 'aspectFit',
@@ -116,10 +115,9 @@ Page({
 
 ////////////////////////////////////////////////////
 
-
   setQiniu: function () {
     var that = this
-    var domain = app.globalData.prod_domain
+    var domain = app.globalData.dev_domain
 
     wx.request({
       url: `${domain}/api/v1/file_upload`,
@@ -141,24 +139,22 @@ Page({
     })
   },
   onReady: function () {
-    this.setQiniu()
+
+    this.setQiniu();
   },
 
   onLoad: function (options) {
-
     console.log("global data setting!!! ")
     console.log(app.globalData)
     // this.setData({ is_teacher: app.globalData.is_teacher })
-
-    // this.initQiniu();
-
     var that = this
     var id = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.prod_domain
-    var endpoint = `${domain}/api/v1/lessons/${id}` // `https://english-go.herokuapp.com/api/v1/lessons/${id}`
-
+    var domain = app.globalData.dev_domain
+    var lesson_id = options.lesson
+    var endpoint = `${domain}/api/v1/lessons/${lesson_id}`
+    // debugger
     wx.request({
       url: endpoint,
       data: {
@@ -173,14 +169,18 @@ Page({
 
         // Update local data storage
         that.setData({
-           lesson: lesson
+          lesson: lesson
         })
       },
       fail: function (res) {
-        console.log(res.data);
+        console.log("loading complications")
         console.log('failed!' + res.statusCode);
       }
     })
+
+  },
+
+  onLoad: function (options) {
   },
 
   saveLesson: function (e) {
@@ -190,7 +190,7 @@ Page({
     // data: submission_voice: student_recording_path
     // data: grading_voice: teacher_recording_path
     console.log("saving lesson!!!")
-    let domain = app.globalData.prod_domain
+    let domain = app.globalData.dev_domain
 
     var qiniuUpToken = that.data.qiniuUpToken
     var qiniuKey = that.data.qiniuKey
@@ -219,7 +219,7 @@ Page({
               console.log(res)
             },
             fail: function (res) {
-              console.log(res.data);
+              console.log('shouldnt be here');
               console.log('failed!' + res.statusCode);
             }
           })
@@ -237,8 +237,7 @@ Page({
           }
         );
       } else {
-
-        console.log("Watch this!!!")
+        console.log("!aghoaaghag!")
         console.log(this.data)
         wx.request({
           url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
@@ -251,7 +250,7 @@ Page({
             console.log(res)
           },
           fail: function (res) {
-            console.log(res.data);
+            console.log("right here!!");
             console.log('failed!' + res.statusCode);
           }
         })
