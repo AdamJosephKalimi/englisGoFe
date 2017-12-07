@@ -1,11 +1,12 @@
 {
   "pages": [
+    "pages/teacher_student_select/teacher_student_select",
     "pages/lesson/lesson",
     "pages/teacher_dashboard/teacher_dashboard",
     "pages/student_dashboard/student_dashboard",
     
     
-    "pages/teacher_student_select/teacher_student_select",
+    
     
     
     "pages/teacher_student_dashboard/teacher_student_dashboard",

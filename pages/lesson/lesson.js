@@ -18,6 +18,9 @@ Page({
     student_recording_path: null,
     teacher_recording_path: null,
     is_recording: false,
+    content: null,
+    title: null,
+    keywords: null
   },
   array: [{
     mode: 'aspectFit',
@@ -177,10 +180,31 @@ Page({
         console.log('failed!' + res.statusCode);
       }
     })
+    //fetch assignments
+    wx.request({
+      url: `${domain}/api/v1/assignments/${lesson_id}`,
+      data: {
+        user_open_id: openId,
+        user_token: authToken
+      },
+      success: function (res) {
+        // res contains all the HTTP request data
+        console.log('success!' + res.statusCode);
+        let assignment = res.data
+        //debugger
+        // Update local data storage
+        that.setData({
+          content: assignment.content,
+          title: assignment.title,
+          keywords: assignment.keywords
+        })
+      },
+      fail: function (res) {
+        console.log("loading complications")
+        console.log('failed!' + res.statusCode);
+      }
+    })
 
-  },
-
-  onLoad: function (options) {
   },
 
   saveLesson: function (e) {
