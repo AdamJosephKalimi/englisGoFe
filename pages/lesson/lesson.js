@@ -1,11 +1,11 @@
 const qiniuUploader = require("../../utils/qiniuUploader.js");
 
-var filePath;
 var app = getApp()
+var filePath;
 
 Page({
   data: {
-    lesson_id: 26,
+    lesson_id: 29,
     content: null,
     voice: null,
     lesson: null,
@@ -15,6 +15,8 @@ Page({
     storage_hash: null,
     qiniuUpToken: null,
     qiniuKey: null,
+    student_recording_path: null,
+    teacher_recording_path: null,
     userInfo: {},
     is_recording: false
   },
@@ -111,68 +113,9 @@ Page({
     this.playRecording(e.currentTarget.dataset.recording_file)
   },
 
-  saveLesson: function (e) {
-    // put: lessons/lesson_id 
-    // data: submission_voice: student_recording_path
-    // data: grading_voice: teacher_recording_path
-    console.log("saving lesson!!!")
-    let domain = app.globalData.dev_domain
-
-
-    wx.request({
-      url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
-      method: 'put',
-      data: {
-        submission_voice: this.data.student_recording_path,
-        grading_voice: this.data.teacher_recording_path
-      }
-    })
-
-  },
 ////////////////////////////////////////////////////
 
-  uploadVoice: function() {
-    var that = this
-    var filePath = that.data.recording_path
-    // not sure if this is the best way for this to work dynamically
-    var qiniuUpToken = that.data.qiniuUpToken
-    var qiniuKey = that.data.qiniuKey
 
-    qiniuUploader.upload(filePath, (res) => {
-      console.log(res);
-      that.setData({
-        storage_path: res.voiceUrl,
-        storage_key: res.key,
-        storage_hash: res.hash
-      });
-    }, (error) => {
-      console.error('error: ' + JSON.stringify(error));
-    },
-    {
-      // can the var qiniuKey be passed in as such??
-      region: 'ECN',
-      uptoken: `${qiniuUpToken}`,
-      domain: 'http://p0hdqjyyy.bkt.clouddn.com',
-      shouldUseQiniuFileName: false,
-      key: `${qiniuKey}`
-    }
-    );
-  },
-
-  downloadVoice: function (){
-    wx.downloadFile({
-    url: 'http://p0hdqjyyy.bkt.clouddn.com/thebestvoice.silk',
-    // `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
-    success: function(res) {
-
-        if (res.statusCode === 200) {
-            wx.playVoice({
-              filePath: res.tempFilePath
-          })
-        }
-      }
-    })
-  },
   setQiniu: function () {
     var that = this
     var domain = app.globalData.dev_domain
@@ -197,7 +140,7 @@ Page({
     })
   },
   onReady: function () {
-    // this.setQiniu()
+    this.setQiniu()
   },
 
   onLoad: function (options) {
@@ -235,56 +178,98 @@ Page({
       fail: function (res) {
         console.log(res.data);
         console.log('failed!' + res.statusCode);
-      },
-      complete: function (res) {
-        console.log(res.data);
-        console.log('completed!' + res.statusCode);
       }
     })
   },
 
-  bindSubmission: function(event){
+  saveLesson: function (e) {
+
     var that = this
-    var lessonId = that.data.lesson_id
-    var openId = app.globalData.open_id
-    var authToken = app.globalData.authentication_token
-    var voice_submission = that.data.storage_path
-    var voice_key = that.data.storage_key
-    var domain = app.globalData.dev_domain
+    // put: lessons/lesson_id
+    // data: submission_voice: student_recording_path
+    // data: grading_voice: teacher_recording_path
+    console.log("saving lesson!!!")
+    let domain = app.globalData.dev_domain
 
-    that.uploadVoice()
+    var qiniuUpToken = that.data.qiniuUpToken
+    var qiniuKey = that.data.qiniuKey
 
-    wx.request({
-      method: 'POST',
-      url: `${domain}/api/v1/submissions`,
-      data: {
-        user_open_id: openId,
-        user_token: authToken,
-        lesson_id: lessonId,
-        submission: {
-          voice: voice_submission,
-          content: voice_key
-        }
-      },
-      success: function (response){
-        let res = response.data;
-        console.log(res)
-      },
-      fail: function (res) {
-        console.log(res.data);
-        console.log('failed!' + res.statusCode);
+    qiniuUploader.upload(that.data.student_recording_path, (res) => {
+      //Uploaded student recording
+      console.log(res);
+      that.setData({uploaded_student_rec_path: res.voiceURL})
+
+      if (that.data.teacher_recording_path != null) {
+        qiniuUploader.upload(teacher_recording_path, (res) => {
+          //Uploaded student and teacher recording
+
+          console.log(res);
+          that.setData({uploaded_teacher_rec_path: res.voiceURL})
+
+          wx.request({
+            url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
+            method: 'PUT',
+            data: {
+              submission_voice: this.data.uploaded_student_rec_path,
+              grading_voice: this.data.uploaded_teacher_rec_path
+            },
+            success: function (response){
+              let res = response.data;
+              console.log(res)
+            },
+            fail: function (res) {
+              console.log(res.data);
+              console.log('failed!' + res.statusCode);
+            }
+          })
+
+          }, (error) => {
+            console.error('error: ' + JSON.stringify(error));
+          },
+          {
+            // can the var qiniuKey be passed in as such??
+            region: 'ECN',
+            uptoken: `${qiniuUpToken}`,
+            domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+            shouldUseQiniuFileName: false,
+            key: `${qiniuKey}`
+          }
+        );
+      } else {
+
+        console.log("Watch this!!!")
+        console.log(this.data)
+        wx.request({
+          url: `${domain}/api/v1/lessons/${this.data.lesson_id}`,
+          method: 'PUT',
+          data: {
+            submission_voice: this.data.uploaded_student_rec_path
+          },
+          success: function (response){
+            let res = response.data;
+            console.log(res)
+          },
+          fail: function (res) {
+            console.log(res.data);
+            console.log('failed!' + res.statusCode);
+          }
+        })
+
       }
-    })
 
+    }, (error) => {
+      console.log(error)
+      console.error('error: ' + JSON.stringify(error));
+    },
+    {
+      // can the var qiniuKey be passed in as such??
+      region: 'ECN',
+      uptoken: `${qiniuUpToken}`,
+      domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+      shouldUseQiniuFileName: false,
+      key: `${qiniuKey}`
+    }
+    );
 
-    wx.showToast({
-      title: 'Sending :P',
-      icon: 'loading',
-      duration: 1500
-    })
-
-    wx.reLaunch({
-      url: '/pages/index/index?form=1'
-    })
   }
 })
