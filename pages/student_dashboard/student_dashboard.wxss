@@ -86,13 +86,13 @@ color: #F5847B;
 opacity: 0.9; */
 
 .submitted {
-  background-color: #F5847B;
-  opacity: 0.9;
+  background-color: #FADA71;
+  opacity: 0.84;
 }
 
 .graded {
-  background-color: #4A90E2;
-  opacity: 0.9;
+  background-color: #27954A;
+  opacity: 0.55;
 }
 
 .btn {
