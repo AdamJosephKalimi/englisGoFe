@@ -30,21 +30,22 @@
   <view>
     <button class="submit-btn" bindtap='saveLesson'>Submit</button>
   </view>
-
-
+  <view>
+    <image id='lesson_img' style="width: 320px; height: 148px background-color: #D8D8D8;" src="../../image/shieldgraphic.png"></image>
+  </view>
   <view id="ipa_container">
     <view class="words_1">
-      <ul>
-        <li>Hello ; Hehlow</li>
-        <li>Goodbye ; Gudbai</li>
-        <li>Later ; Laitr</li>
+      <ul class="li">
+        <li>Keyword_1</li>
+        <li>Keywork_2</li>
+        <li>Keywork_3</li>
       </ul>
     </view>
     <view class="words_2">
-      <ul>
-        <li>world ; Werldeh</li>
-        <li>Moon ; Mu¨n</li>
-        <li>Sun ; suhn</li>
+      <ul class="li">
+        <li>Keywork_4</li>
+        <li>Keywork_5</li>
+        <li>Keywork_6</li>
       </ul>
     </view>
   </view>
