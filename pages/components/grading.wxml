@@ -13,6 +13,6 @@
     <include src="../components/listen_to_teacher.wxml"/>
   </view>
   <view wx:else>
-    <text>Teacher hasn't graded yet</text>
+    <text class="notYetGraded">Teacher hasn't graded yet</text>
   </view>
 </view> 

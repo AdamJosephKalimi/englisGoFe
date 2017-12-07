@@ -59,6 +59,12 @@
   width: 650rpx;
 }
 
+.li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
   .words_1 {
   font-family: AvenirNext-Medium;
   font-size: 14px;
@@ -97,9 +103,6 @@
   padding: 10px;
 }
 
-/* .go{
-
-} */
 
 .submit-btn {
   color: #656565;
@@ -111,4 +114,14 @@
   font-family: AvenirNext-Regular;
   font-weight: lighter;
   opacity: 0.8;
+}
+
+#lesson_img {
+  height: 150px;
+}
+
+.notYetGraded {
+  font-family: AvenirNext-Regular;
+  font-weight: lighter;
+  font-size: 12px;
 }

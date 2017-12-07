@@ -142,9 +142,6 @@ Page({
   },
   onReady: function () {
     this.setQiniu()
-  },
-
-  onLoad: function (options) {
 
     console.log("global data setting!!! ")
     console.log(app.globalData)
@@ -173,7 +170,7 @@ Page({
 
         // Update local data storage
         that.setData({
-           lesson: lesson
+          lesson: lesson
         })
       },
       fail: function (res) {
@@ -181,6 +178,10 @@ Page({
         console.log('failed!' + res.statusCode);
       }
     })
+
+  },
+
+  onLoad: function (options) {
   },
 
   saveLesson: function (e) {

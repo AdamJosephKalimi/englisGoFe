@@ -3,7 +3,7 @@
     <include src="../components/listen_to_student.wxml"/>
   </view>
   <view wx:else>
-    teacher view: Student hasn't recorded
+    <text class="notYetGraded">teacher view: Student hasn't recorded</text>
   </view>
 </view>
 

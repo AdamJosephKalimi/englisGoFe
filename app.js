@@ -68,7 +68,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    prod_domain: '101.37.31.161',
+    prod_domain: 'http://101.37.31.161',
     dev_domain: 'http://localhost:3000'
   }
 })
