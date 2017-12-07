@@ -3,10 +3,10 @@
   <view class="userinfo">
     <view>
       <!-- Create the avatar and write Welcome ({{user}} - mustache to import the current user)  -->
-      <image src="{{userInfo.avatarUrl}}" class="studentAvatar"></image>
+      <image src="{{student_img}}" class="studentAvatar"></image>
     </view>
 
-    <text class='welcome'>{{userInfo.nickName}}</text>
+    <text class='welcome'>{{student_name}}</text>
   </view>
 
   <view>
@@ -18,20 +18,20 @@
     <!--Need to code a color to overide the button which holds the
     current day's assignment.  -->
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box1_class}}" id='box1' data-ass_id='{{lessons[0].id}}'>1</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box2_class}}" id='box2' data-ass_id='{{lessons[1].id}}'>2</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box3_class}}" id='box3' data-ass_id='{{lessons[2].id}}'>3</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box4_class}}" id='box4' data-ass_id='{{lessons[3].id}}'>4</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box5_class}}" id='box5' data-ass_id='{{lessons[4].id}}'>5</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box6_class}}" id='box6' data-ass_id='{{lessons[5].id}}'>6</navigator></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box1_class}}" id='box1' data-ass_id='{{lessons[0].id}}'>1</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box2_class}}" id='box2' data-ass_id='{{lessons[1].id}}'>2</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box3_class}}" id='box3' data-ass_id='{{lessons[2].id}}'>3</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box4_class}}" id='box4' data-ass_id='{{lessons[3].id}}'>4</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box5_class}}" id='box5' data-ass_id='{{lessons[4].id}}'>5</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box6_class}}" id='box6' data-ass_id='{{lessons[5].id}}'>6</button></li>
     </ul>
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box7_class}}" id='box7' data-ass_id='{{lessons[6].id}}'>7</navigator></li>
-      <li><navigator bindtap='toLessons' url="//pages/lesson/lesson" class="btn-assignments {{box8_class}}" id='box8' data-ass_id='{{lessons[7].id}}'>8</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box9_class}}" id='box9' data-ass_id='{{lessons[8].id}}'>9</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box10_class}}" id='box10' data-ass_id='{{lessons[9].id}}'>10</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box11_class}}" id='box11' data-ass_id='{{lessons[10].id}}'>11</navigator></li>
-      <li><navigator bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box12_class}}" id='box12' data-ass_id='{{lessons[11].id}}'>12</navigator></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box7_class}}" id='box7' data-ass_id='{{lessons[6].id}}'>7</button></li>
+      <li><button bindtap='toLessons' url="//pages/lesson/lesson" class="btn-assignments {{box8_class}}" id='box8' data-ass_id='{{lessons[7].id}}'>8</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box9_class}}" id='box9' data-ass_id='{{lessons[8].id}}'>9</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box10_class}}" id='box10' data-ass_id='{{lessons[9].id}}'>10</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box11_class}}" id='box11' data-ass_id='{{lessons[10].id}}'>11</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box12_class}}" id='box12' data-ass_id='{{lessons[11].id}}'>12</button></li>
     </ul>
   </view>
 
