@@ -1,31 +1,18 @@
 <!--  This page will be dynamic. It will change depending on if the user is logged in as a teacher or as a student.  -->
 
 <view class="container">
-  <view class="lesson_title">Lesson title
-  </view>
+  <view class="lesson_title">{{title}}</view>
   <view>
     <text class='assignment_text'>
       <!-- {{lesson.assignment.title}} add this field to database -->
 
-      <!-- {{lesson.assignment.content}} -->
-      (This text will be the lesson)
-      (Our topic for today will be talking about motivation.
-      Please make sure to create 1. Written and 2. Spoken entry for me to be able to give you feedback on both.
-
-      We all need to be motivated.  Whether you need to be motivated for work, you want to achieve a personal goal (like learning a language), or overcome       a challenge, we all need motivational boost from time to time.
-
-      TO DO:
-      Why does this seem to work so well for you?
-      If you don't have a fitness routine, write out your fitness goals.
-
-      Please make sure that you complete the written and spoken portions so that I can give you good
-      feedback on both. If you have any questions about the assignment or words, please let me know)
+      {{content}}
     </text>
   </view>
 
-   <include src="../components/submission.wxml"/> 
+   <include src="../components/submission.wxml"/>
 
-   <include src="../components/grading.wxml"/> 
+   <include src="../components/grading.wxml"/>
 
   <view>
     <button class="submit-btn" bindtap='saveLesson'>Submit</button>
@@ -36,16 +23,7 @@
   <view id="ipa_container">
     <view class="words_1">
       <ul class="li">
-        <li>Keyword_1</li>
-        <li>Keywork_2</li>
-        <li>Keywork_3</li>
-      </ul>
-    </view>
-    <view class="words_2">
-      <ul class="li">
-        <li>Keywork_4</li>
-        <li>Keywork_5</li>
-        <li>Keywork_6</li>
+        <li>{{keywords}}</li>
       </ul>
     </view>
   </view>
