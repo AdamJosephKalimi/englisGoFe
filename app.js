@@ -7,9 +7,10 @@ App({
       withCredentials: true,
       success: function (res) {
         var code = res.code
+
         wx.getUserInfo({
           success: function (res) {
-
+            console.log(res)
             that.globalData.userInfo = res.userInfo
             that.sendCodeToBackend(code, res)
 
@@ -40,6 +41,7 @@ App({
   sendCodeToBackend: function (code, res) {
     var that = this
     var domain = that.globalData.dev_domain
+    console.log(res)
     wx.request({
       url: `${domain}/api/v1/users`,
       method: 'POST',
@@ -51,24 +53,26 @@ App({
         } },
       success: function (res) {
         console.log('done with sendCodeToBackend')
-        console.log(res)
+        console.log(res.data)
         that.globalData.is_teacher = res.data.is_teacher
         that.globalData.open_id = res.data.open_id
         that.globalData.username = res.data.username
         that.globalData.authentication_token = res.data.authentication_token
+        that.globalData.avatar = res.data.avatar
         console.log("Global Data now:")
         console.log(that.globalData)
 
       },
       fail: function (err) {
-        console.log('faield')
+        console.log('failed')
         console.error(err)
       }
     })
   },
   globalData: {
     userInfo: null,
-    prod_domain: '101.37.31.161',
+    prod_domain: 'englishgo.shanghaiwogeng.com',
+    // '101.37.31.161',
     dev_domain: 'http://localhost:3000'
   }
 })
