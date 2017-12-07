@@ -5,7 +5,7 @@
 
     <button bindtap="playButtonClicked" class='record_btn_1' data-recording_file="{{lesson.grading.voice}}">
     
-      <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>  
+      <image class='go' style="width: 33px; height: 33px;" src="../../image/speaker.png"/>  
     
     </button>
   <view class='btn_directions'>

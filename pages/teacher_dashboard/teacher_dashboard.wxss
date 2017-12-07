@@ -34,14 +34,25 @@
   margin: 0px;
 }
 
+.assignmentIndex{
+  width: 294px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+
 .btn-assignments {
   color: white;
   padding: 10px 10px;
-  /* border-radius: 1px; */
-  width: 18px;
+  border-radius: 1px;  
+  width: 52px;
+  height: 52px;
   font-weight: bold;
   background: #6AD58B;
   transition: background 0.3s ease;
+  
 }
 .lessons {
   display: flex;
@@ -53,26 +64,74 @@
 #row1 {
   background-color: #4A90E2;
   opacity: 1;
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 }
 #row2 {
   background-color: #4A90E2;
   opacity: 0.9;
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 }
 #row3 {
   background-color: #4A90E2;
   opacity: 0.7;
+  display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row; /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
 }
 #row4 {
   background-color: #4A90E2;
   opacity: 0.6;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row; /* works with row or column */
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 #row5 {
   background-color: #4A90E2;
   opacity: 0.4;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row; /* works with row or column */
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 #row6 {
   background-color: #4A90E2;
   opacity: 0.3;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row; /* works with row or column */
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 .avatar-container {

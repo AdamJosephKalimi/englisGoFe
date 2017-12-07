@@ -8,7 +8,7 @@
   <view class='btn_class'>
     <button bindtap="studentRecordClicked" class='record_btn_1'>
       
-      <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>
+      <image class='go' style="width: 33px; height: 33px;" src="../../image/speaker.png"/>
 
     </button>
   </view>
