@@ -1,12 +1,14 @@
 <!--  This page will be dynamic. It will change depending on if the user is logged in as a teacher or as a student.  -->
 
 <view class="container">
-  <view class="lesson_title">{{title}}</view>
+  <view class="lesson_title">{{lesson.assignment.title}}</view>
   <view>
     <text class='assignment_text'>
       <!-- {{lesson.assignment.title}} add this field to database -->
 
-      {{Lesson.first.assignment()}}
+
+      {{lesson.assignment.content}}
+
     </text>
   </view>
 
@@ -23,7 +25,7 @@
   <view id="ipa_container">
     <view class="words_1">
       <ul class="li">
-        <li>{{keywords}}</li>
+        <li>{{lesson.assignment.keywords}}</li>
       </ul>
     </view>
   </view>
