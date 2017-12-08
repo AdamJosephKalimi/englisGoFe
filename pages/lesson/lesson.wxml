@@ -6,7 +6,9 @@
     <text class='assignment_text'>
       <!-- {{lesson.assignment.title}} add this field to database -->
 
+
       {{lesson.assignment.content}}
+
     </text>
   </view>
 
