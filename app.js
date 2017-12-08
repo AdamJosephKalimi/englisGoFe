@@ -39,7 +39,7 @@ App({
   },
   sendCodeToBackend: function (code, res) {
     var that = this
-    var domain = that.globalData.dev_domain
+    var domain = that.globalData.prod_domain
     console.log(res)
     console.log(code)
     wx.request({

@@ -25,7 +25,7 @@ Page({
       authToken: app.globalData.authentication_token,
       userId: app.globalData.user_id
     })
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
     var endpoint = `${domain}/api/v1/lessons?user_id=${that.data.userId}`
     // debugger
     wx.request({

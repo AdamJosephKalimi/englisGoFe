@@ -120,7 +120,7 @@ Page({
 
   setQiniu: function () {
     var that = this
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
 
     wx.request({
       url: `${domain}/api/v1/file_upload`,
@@ -158,7 +158,7 @@ Page({
     var id = that.data.lesson_id
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
     var lesson_id = options.lesson
     var endpoint = `${domain}/api/v1/lessons/${lesson_id}`
     // debugger
@@ -194,7 +194,7 @@ Page({
     // data: submission_voice: student_recording_path
     // data: grading_voice: teacher_recording_path
     console.log("saving lesson!!!")
-    let domain = app.globalData.dev_domain
+    let domain = app.globalData.prod_domain
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
     var qiniuUpToken = that.data.qiniuUpToken

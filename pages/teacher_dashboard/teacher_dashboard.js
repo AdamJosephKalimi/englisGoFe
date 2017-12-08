@@ -40,7 +40,7 @@ Page({
 
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
     var endpoint = `${domain}/api/v1/lessons`
 
     // get student_id
@@ -62,7 +62,7 @@ Page({
     console.log(assignmentId)
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
-    var domain = app.globalData.dev_domain
+    var domain = app.globalData.prod_domain
 
     wx.request({
       method: 'POST',
