@@ -81,17 +81,17 @@ Page({
   onLoad: function (options) {
     var that = this
 
-    // var endpoint = 'https://english-go.herokuapp.com/api/v1/lessons'
+    var domain = that.globalData.prod_domain
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
     console.log('loading lessons')
-    var endpoint = 'http://localhost:3000/api/v1/lessons'
+    var endpoint = `${domain}/api/v1/lessons`
     wx.request({
       url: endpoint,
       data: {
         user_open_id: openId,
         user_token: authToken,
-        student_id: 8
+        user_id: app.globalData.user_id
       },
       success: function (res) {
         // res contains all the HTTP request data

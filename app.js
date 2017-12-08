@@ -13,7 +13,6 @@ App({
             console.log(res)
             that.globalData.userInfo = res.userInfo
             that.sendCodeToBackend(code, res)
-
             typeof cb == "function" && cb(that.globalData.userInfo)
             console.log(that.globalData.userInfo)
           }
@@ -40,8 +39,9 @@ App({
   },
   sendCodeToBackend: function (code, res) {
     var that = this
-    var domain = that.globalData.dev_domain
+    var domain = that.globalData.prod_domain
     console.log(res)
+    console.log(code)
     wx.request({
       url: `${domain}/api/v1/users`,
       method: 'POST',
@@ -58,6 +58,7 @@ App({
         that.globalData.open_id = res.data.open_id
         that.globalData.username = res.data.username
         that.globalData.authentication_token = res.data.authentication_token
+        that.globalData.user_id = res.data.id
         that.globalData.avatar = res.data.avatar
         console.log("Global Data now:")
         console.log(that.globalData)
@@ -74,7 +75,6 @@ App({
 
     prod_domain: 'englishgo.shanghaiwogeng.com',
     // '101.37.31.161',
-
     dev_domain: 'http://localhost:3000'
   }
 })
