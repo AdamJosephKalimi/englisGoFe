@@ -10,7 +10,7 @@
   </view>
 
   <view>
-    <image id='banner' style="width: 320px; height: 148px; background-color: #D8D8D8;" src="../../image/cityBanner.png"></image>
+    <image id='banner' style="width: 320px; height: 148px;" src="../../image/cityBanner.png"></image>
   </view>
 
   <view class='assignmentIndex'>
@@ -18,20 +18,24 @@
     <!--Need to code a color to overide the button which holds the
     current day's assignment.  -->
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box1_class}}" id='box1' data-dev_id ="1" data-ass_id='{{lessons[0].id}}'>1</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box2_class}}" id='box2' data-dev_id ="2" data-ass_id='{{lessons[1].id}}'>2</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box3_class}}" id='box3' data-dev_id ="3" data-ass_id='{{lessons[2].id}}'>3</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box4_class}}" id='box4' data-dev_id ="4" data-ass_id='{{lessons[3].id}}'>4</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box5_class}}" id='box5' data-dev_id ="5" data-ass_id='{{lessons[4].id}}'>5</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box6_class}}" id='box6' data-dev_id ="6" data-ass_id='{{lessons[5].id}}'>6</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box1_class}}" id='box1' data-dev_id ="1" data-ass_id='{{lessons[0].id}}' hover-class="btn-assignments-hover">1</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box2_class}}" id='box2' data-dev_id ="2" data-ass_id='{{lessons[1].id}}' hover-class="btn-assignments-hover">2</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box3_class}}" id='box3' data-dev_id ="3" data-ass_id='{{lessons[2].id}}' hover-class="btn-assignments-hover">3</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box4_class}}" id='box4' data-dev_id ="4" data-ass_id='{{lessons[3].id}}' hover-class="btn-assignments-hover">4</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box5_class}}" id='box5' data-dev_id ="5" data-ass_id='{{lessons[4].id}}' hover-class="btn-assignments-hover">5</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box6_class}}" id='box6' data-dev_id ="6" data-ass_id='{{lessons[5].id}}' hover-class="btn-assignments-hover">6</button></li>
     </ul>
     <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box7_class}}" id='box7' data-dev_id ="7" data-ass_id='{{lessons[6].id}}'>7</button></li>
-      <li><button bindtap='toLessons' url="//pages/lesson/lesson" class="btn-assignments {{box8_class}}" id='box8' data-dev_id ="8" data-ass_id='{{lessons[7].id}}'>8</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box9_class}}" id='box9' data-dev_id ="9" data-ass_id='{{lessons[8].id}}'>9</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box10_class}}" id='box10' data-dev_id ="10" data-ass_id='{{lessons[9].id}}'>10</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box11_class}}" id='box11' data-dev_id ="11" data-ass_id='{{lessons[10].id}}'>11</button></li>
-      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box12_class}}" id='box12' data-dev_id ="12" data-ass_id='{{lessons[11].id}}'>12</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box7_class}}" id='box7' data-dev_id ="7" data-ass_id='{{lessons[6].id}}' hover-class="btn-assignments-hover">7</button></li>
+      <li><button bindtap='toLessons' url="//pages/lesson/lesson" class="btn-assignments {{box8_class}}" id='box8' data-dev_id ="8" data-ass_id='{{lessons[7].id}}' hover-class="btn-assignments-hover">8</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box9_class}}" id='box9' data-dev_id ="9" data-ass_id='{{lessons[8].id}}' hover-class="btn-assignments-hover">9</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box10_class}}" id='box10' data-dev_id ="10" data-ass_id='{{lessons[9].id}}' hover-class="btn-assignments-hover">10</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments {{box11_class}}" id='box11' data-dev_id ="11" data-ass_id='{{lessons[10].id}}' hover-class="btn-assignments-hover">11</button></li>
+      <li><button bindtap='toLessons' url="/pages/lesson/lesson" id="btn-assignments {{box12_class}}" id='box12' data-dev_id ="12" data-ass_id='{{lessons[11].id}}' class="btn-assignments" hover-class="btn-assignments-hover">
+    <view class="btn-final"><image id='btn-final' style="width: 35px; height: 35px;" src="../../image/Emojione_1F389.svg.png"></image>
+    </view>
+    </button>
+    </li>
     </ul>
   </view>
 

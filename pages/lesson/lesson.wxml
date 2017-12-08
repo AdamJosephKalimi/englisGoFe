@@ -6,7 +6,7 @@
     <text class='assignment_text'>
       <!-- {{lesson.assignment.title}} add this field to database -->
 
-      {{content}}
+      {{Lesson.first.assignment()}}
     </text>
   </view>
 

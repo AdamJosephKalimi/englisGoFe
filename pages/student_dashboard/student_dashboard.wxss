@@ -35,20 +35,48 @@
   margin: 0px;
 }
 
+.list-inline lessons hidden-sm hidden-xs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .btn-assignments {
   color: white;
   padding: 10px 10px;
-  /* border-radius: 1px; */
-  width: 18px;
+  border-radius: 1px;  
+  width: 50px;
+  height: 50px;
   font-weight: bold;
   background: #6AD58B;
   transition: background 0.3s ease;
 }
+
+.btn-assignments {
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  border-radius:0px;
+  border:1px solid rgba(0, 0, 0, 0.1)
+}
+
+.btn-assignments-hover {
+  background: #87DDA1;
+}
+
+.btn-assignments button {
+  padding:0px;
+}
+
+button::after {
+  border-radius:0px;
+  border:0px;
+}
+
 .lessons {
   display: flex;
   align-items: center;
   text-align: center;
-  margin: 5px;
 }
 
 .assigned {
@@ -115,10 +143,35 @@ margin: 10px;
 }
 
 #myBar {
-    width: 10%;
-    height: 30px;
-    background-color: #1CAE32;
-    text-align: center; /* To center it horizontally (if you want) */
-    line-height: 30px; /* To center it vertically */
-    color: white;
+  width: 10%;
+  height: 30px;
+  background-color: #1CAE32;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white;
+}
+
+#box12 {
+  display: flex;
+  justify-content: center;
+  border-radius: 1px;  
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  background: #6AD58B;
+  transition: background 0.3s ease;
+}
+
+.btn-final {
+  display:flex;
+  align-items:center;
+}
+ 
+
+.assignmentIndex{
+  width: 294px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
 }
