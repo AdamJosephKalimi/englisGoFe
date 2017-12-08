@@ -60,6 +60,7 @@ App({
         that.globalData.authentication_token = res.data.authentication_token
         that.globalData.user_id = res.data.id
         that.globalData.avatar = res.data.avatar
+        that.globalData.students  = res.data.students
         console.log("Global Data now:")
         console.log(that.globalData)
 
@@ -73,7 +74,8 @@ App({
   globalData: {
     userInfo: null,
 
-    prod_domain: 'englishgo.shanghaiwogeng.com',
+    prod_domain: 'http://172.16.103.174:3000',
+    //'englishgo.shanghaiwogeng.com',
     // '101.37.31.161',
     dev_domain: 'http://localhost:3000'
   }

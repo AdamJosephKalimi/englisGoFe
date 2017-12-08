@@ -153,7 +153,7 @@ Page({
   onLoad: function (options) {
     console.log("global data setting!!! ")
     console.log(app.globalData)
-    // this.setData({ is_teacher: app.globalData.is_teacher })
+    this.setData({ is_teacher: app.globalData.is_teacher })
     var that = this
     var id = that.data.lesson_id
     var openId = app.globalData.open_id

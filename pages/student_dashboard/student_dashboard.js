@@ -18,23 +18,32 @@ Page({
   },
 
   onLoad: function (options) {
-    //this.checkFetchLessons()
     var that = this
     that.setData({
       openId: app.globalData.open_id,
       authToken: app.globalData.authentication_token,
-      userId: app.globalData.user_id
+      userId: app.globalData.userId
     })
     var domain = app.globalData.prod_domain
-    var endpoint = `${domain}/api/v1/lessons?user_id=${that.data.userId}`
-    // debugger
+
+    console.log(options.student_id)
+
+    var endpoint = `${domain}/api/v1/lessons`
+
+    if (options.student_id != null) {
+      var user_id = options.student_id
+    }
+    else {
+      var user_id = that.data.userId
+    }
+
+    //debugger
     wx.request({
       url: endpoint,
       data: {
         user_open_id: that.data.openId,
         user_token: that.data.authToken,
-        user_id: that.data.userId,
-        from_teacher: false
+        user_id: user_id,
       },
       success: function (res) {
         // res contains all the HTTP request data

@@ -13,15 +13,6 @@ Page({
     }],
     students: [
       { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
-      { src: '../../image/Batch 122-32.jpg' },
     ]
     // Must be able to dynamically import photos
   },
@@ -33,15 +24,19 @@ Page({
 
   },
   onReady: function (options) {
+    var students = app.globalData.students
     this.setData({
       teacher_img: app.globalData.userInfo.avatarUrl,
-      teacher_name: app.globalData.userInfo.nickName
+      teacher_name: app.globalData.userInfo.nickName,
+      students: students
     })
-
     var openId = app.globalData.open_id
     var authToken = app.globalData.authentication_token
     var domain = app.globalData.prod_domain
     var endpoint = `${domain}/api/v1/lessons`
+    var that = this
+
+    console.log(students)
 
     // get student_id
     wx.request({
@@ -49,6 +44,7 @@ Page({
       data: {
         user_open_id: openId,
         user_token: authToken,
+        user_id: app.globalData.user_id,
         from_teacher: true
       },
       success: function (res) {
@@ -97,9 +93,11 @@ Page({
   },
 
   studentAvatar: function () {
+    var students = app.globalData.students
+    var student_id = 2
     wx.navigateTo({
       //Route to a student index linked to this teacher
-      url: "../teacher_student_dashboard/teacher_student_dashboard",
+      url: `../student_dashboard/student_dashboard?student_id=${student_id}`,
     })
   }
 })
