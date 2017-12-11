@@ -101,6 +101,7 @@
   align-items: center;
   /* height: 150px; */
   padding: 10px;
+<<<<<<< HEAD
 }
 
 
@@ -124,4 +125,6 @@
   font-family: AvenirNext-Regular;
   font-weight: lighter;
   font-size: 12px;
+=======
+>>>>>>> d9a26fb... progress on lesson form and deleted assignment
 }

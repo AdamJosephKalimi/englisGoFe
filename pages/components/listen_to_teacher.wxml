@@ -1,6 +1,11 @@
 <view class='rcrd-bckgrnd'>
   <view class='btn_directions'>
+<<<<<<< HEAD
     <text>Hear teacher's feedback</text>
+=======
+    <text>Hear your teacher's feedback</text>
+    <text>听老师的反馈</text>
+>>>>>>> d9a26fb... progress on lesson form and deleted assignment
   </view>
 
     <button bindtap="playButtonClicked" class='record_btn_1' data-recording_file="{{lesson.grading.voice}}">

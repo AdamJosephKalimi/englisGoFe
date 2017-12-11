@@ -14,6 +14,7 @@
 
    <include src="../components/submission.wxml"/>
 
+<<<<<<< HEAD
    <include src="../components/grading.wxml"/>
 
   <view>
@@ -22,6 +23,23 @@
   <view>
     <image id='lesson_img' style="width: 320px; height: 148px background-color: #D8D8D8;" src="../../image/shieldgraphic.png"></image>
   </view>
+=======
+<view wx:if="{{lesson.submission}}"><include src="../components/listen_to_student.wxml"/>
+  <include src="../components/teacher_record.wxml"/></view> 
+
+<view wx:elif="{{lesson.grading}}"><include src="../components/listen_to_student.wxml"/>
+  <include src="../components/listen_to_teacher.wxml"/>
+</view>
+
+<view wx:else><include src="../components/student_record.wxml"/></view>
+
+
+  <view>
+    <button class="submit-btn" bindtap='toMyStudents'>Submit</button>
+  </view>
+
+
+>>>>>>> d9a26fb... progress on lesson form and deleted assignment
   <view id="ipa_container">
     <view class="words_1">
       <ul class="li">

@@ -82,6 +82,7 @@ Page({
     this.setData({ is_recording: !is_recording })
 
   },
+<<<<<<< HEAD
   startTeacherRecording: function () {
     var that = this
     wx.startRecord({
@@ -119,6 +120,10 @@ Page({
 ////////////////////////////////////////////////////
 
   setQiniu: function () {
+=======
+
+  uploadVoice: function() {
+>>>>>>> d9a26fb... progress on lesson form and deleted assignment
     var that = this
     var domain = app.globalData.prod_domain
 
@@ -147,7 +152,23 @@ Page({
   },
   onReady: function () {
 
+<<<<<<< HEAD
     this.setQiniu();
+=======
+  downloadVoice: function (){
+    wx.downloadFile({
+      url: 'http://p0hdqjyyy.bkt.clouddn.com/testvoice.silk',
+    // `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
+    success: function(res) {
+
+        if (res.statusCode === 200) {
+            wx.playVoice({
+              filePath: res.tempFilePath
+          })
+        }
+      }
+    })
+>>>>>>> d9a26fb... progress on lesson form and deleted assignment
   },
 
   onLoad: function (options) {

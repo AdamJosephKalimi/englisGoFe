@@ -86,6 +86,7 @@ Page({
     })
   },
 
+<<<<<<< HEAD
   toLessons: function (event) {
     let id = event.currentTarget.dataset.ass_id
     console.log(id)
@@ -100,6 +101,30 @@ Page({
     wx.navigateTo({
       //Route to a student index linked to this teacher
       url: "../teacher_student_dashboard/teacher_student_dashboard",
+=======
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+  
+  },
+  toLesson: function () {
+    wx.navigateTo({
+      url: "../lesson/lesson",
+    })
+  },
+  studentAvatar: function () {
+    wx.navigateTo({
+      url: "../teacher_student_avatar/teacher_student_avatar",
+    })
+  },
+
+  
+  toMyStudents: function () {
+    wx.navigateTo({
+      //Route to a student index linked to this teacher
+      url: "../teacher_student_avatar/teacher_student_avatar",
+>>>>>>> d9a26fb... progress on lesson form and deleted assignment
     })
   }
 })
