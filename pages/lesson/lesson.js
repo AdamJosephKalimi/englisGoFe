@@ -82,7 +82,7 @@ Page({
     this.setData({ is_recording: !is_recording })
 
   },
-<<<<<<< HEAD
+
   startTeacherRecording: function () {
     var that = this
     wx.startRecord({
@@ -119,57 +119,79 @@ Page({
 
 ////////////////////////////////////////////////////
 
-  setQiniu: function () {
-=======
+//   setQiniu: function () {
 
-  uploadVoice: function() {
->>>>>>> d9a26fb... progress on lesson form and deleted assignment
-    var that = this
-    var domain = app.globalData.prod_domain
+//   uploadVoice: function() {
+//     var that = this
+//     var domain = app.globalData.prod_domain
 
-    wx.request({
-      url: `${domain}/api/v1/file_upload`,
-      data: {
-        user_open_id: app.globalData.open_id,
-        user_token: app.globalData.authentication_token
-      },
-      success: function (res) {
-        // res contains all the HTTP request data
-        console.log('success!' + res.statusCode);
-        console.log(res.data);
-        // Update local data storage
-        let qiniu = res.data
-        that.setData({
-          qiniuUpToken: qiniu.token,
-          qiniuKey: qiniu.key
-        })
-        that.initQiniu();
-      },
-      fail: function (res) {
-        console.log('failed!' + res.statusCode);
-      },
-    })
-  },
-  onReady: function () {
+//     wx.request({
+//       url: `${domain}/api/v1/file_upload`,
+//       data: {
+//         user_open_id: app.globalData.open_id,
+//         user_token: app.globalData.authentication_token
+//       },
+//       success: function (res) {
+//         // res contains all the HTTP request data
+//         console.log('success!' + res.statusCode);
+//         console.log(res.data);
+//         // Update local data storage
+//         let qiniu = res.data
+//         that.setData({
+//           qiniuUpToken: qiniu.token,
+//           qiniuKey: qiniu.key
+//         })
+//         that.initQiniu();
+//       },
+//       fail: function (res) {
+//         console.log('failed!' + res.statusCode);
+//       },
+//     })
+// =======
+//     qiniuUploader.upload(filePath, (res) => {
+//       console.log(res);
+//       that.setData({
+//         storage_path: res.voiceUrl,
+//         storage_key: res.key,
+//         storage_hash: res.hash
+//       });
+//     }, (error) => {
+//       console.error('error: ' + JSON.stringify(error));
+//     },
+//     {
+//       region: 'ECN',
+//       uptoken:"PJP0bjvUkPBLO3PmSgAfuVyEh9aTAlzYmiItmRCm:f6iSqqM_s10YphHPt9GVlzSBal0=:eyJzY29wZSI6ImVuZ2xpc2hnbzp0ZXN0dm9pY2Uuc2lsayIsImRlYWRsaW5lIjoxNTEyNjExNDc3LCJ1cGhvc3RzIjpbImh0dHA6Ly91cC5xaW5pdS5jb20iLCJodHRwOi8vdXBsb2FkLnFpbml1LmNvbSIsIi1IIHVwLnFpbml1LmNvbSBodHRwOi8vMTgzLjEzMS43LjE4Il0sImdsb2JhbCI6ZmFsc2V9",
+//       domain: 'http://p0hdqjyyy.bkt.clouddn.com',
+//       shouldUseQiniuFileName: false,
+//       key: 'thebestvoice.silk'
+//     }
+//     );
+// >>>>>>> ab0e275... dashboards changed, getting integrated with backend
+//   },
+//   onReady: function () {
 
-<<<<<<< HEAD
-    this.setQiniu();
-=======
-  downloadVoice: function (){
-    wx.downloadFile({
-      url: 'http://p0hdqjyyy.bkt.clouddn.com/testvoice.silk',
-    // `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
-    success: function(res) {
+// <<<<<<< HEAD
+//     this.setQiniu();
+// =======
+//   downloadVoice: function (){
+//     wx.downloadFile({
+// <<<<<<< HEAD
+//       url: 'http://p0hdqjyyy.bkt.clouddn.com/testvoice.silk',
+// =======
+//     url: 'http://p0hdqjyyy.bkt.clouddn.com/thebestvoice.silk',
+// >>>>>>> ab0e275... dashboards changed, getting integrated with backend
+//     // `http://p0hdqjyyy.bkt.clouddn.com${subKey}`, //仅为示例，并非真实的资源
+//     success: function(res) {
 
-        if (res.statusCode === 200) {
-            wx.playVoice({
-              filePath: res.tempFilePath
-          })
-        }
-      }
-    })
->>>>>>> d9a26fb... progress on lesson form and deleted assignment
-  },
+//         if (res.statusCode === 200) {
+//             wx.playVoice({
+//               filePath: res.tempFilePath
+//           })
+//         }
+//       }
+//     })
+// >>>>>>> d9a26fb... progress on lesson form and deleted assignment
+//   },
 
   onLoad: function (options) {
     console.log("global data setting!!! ")

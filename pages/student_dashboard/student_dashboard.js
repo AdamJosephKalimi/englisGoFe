@@ -80,12 +80,28 @@ Page({
     });
   },
 
-  toLessons: function(event) {
-    var that = this
-    let id = event.currentTarget.dataset.ass_id
+// <<<<<<< HEAD
+//   toLessons: function(event) {
+// =======
+//   toAssignments: function(event) {
+// >>>>>>> ab0e275... dashboards changed, getting integrated with backend
+//     var that = this
+//     let id = event.currentTarget.dataset.ass_id
 
-    wx.navigateTo({
-        url: `../lesson/lesson?lesson=${id}`  //
-      })
-  },
+//     wx.navigateTo({
+//         url: `../lesson/lesson?lesson=${id}`  //
+//       })
+// <<<<<<< HEAD
+// =======
+//   },
+
+//   getUserInfo: function(e) {
+//     console.log(e)
+//     app.globalData.userInfo = e.detail.userInfo
+//     this.setData({
+//       userInfo: e.detail.userInfo,
+//       hasUserInfo: true,
+//     })
+// >>>>>>> ab0e275... dashboards changed, getting integrated with backend
+//   },
 })
