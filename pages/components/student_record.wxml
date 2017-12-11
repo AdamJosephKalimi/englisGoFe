@@ -1,0 +1,20 @@
+<view class='rcrd-bckgrnd'>
+    <text>Tap to record your answer</text>
+    <!--The user will push the record button  -->
+      <!--start/stop recording  -->
+    <button bindtap="buttonClicked" class='record_btn_1'>
+    
+      <view wx:if="{{!is_recording}}"> start</view>
+      <view wx:elif="{{is_recording}}"> stop</view>    
+    
+    </button>
+    <button bindtap="playButtonClicked" class='record_btn_1'>
+    
+      <view wx:if="{{!is_playing}}"> play</view>
+      <view wx:elif="{{is_playing}}"> stop</view>   
+    
+    </button>
+
+    <text>There is a 3 minute time limit
+          有3分钟的时间限制</text>
+</view>
