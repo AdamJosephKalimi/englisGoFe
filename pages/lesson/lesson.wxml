@@ -8,12 +8,16 @@
 
       {{lesson.assignment.content}}
 
+
+
     </text>
   </view>
 
    <include src="../components/submission.wxml"/>
 
+
    <include src="../components/grading.wxml"/>
+
 
   <view>
     <button class="submit-btn" bindtap='saveLesson'>Submit</button>
@@ -36,7 +40,7 @@
   <!-- <include src="../components/recording_form.wxml"/> -->
 
 
-<!-- <view wx:elif="{{lesson.grading}}"><include src="../components/listen_to_student.wxml"/>
+<view wx:elif="{{lesson.grading}}"><include src="../components/listen_to_student.wxml"/>
   <include src="../components/listen_to_teacher.wxml"/>
 </view>
 
@@ -45,7 +49,7 @@
 
   <view>
     <button class="submit-btn" bindtap='toMyStudents'>Submit</button>
-  </view> -->
+  </view>
 
 
 

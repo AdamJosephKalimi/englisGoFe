@@ -80,28 +80,30 @@ Page({
     });
   },
 
-// <<<<<<< HEAD
-//   toLessons: function(event) {
-// =======
-//   toAssignments: function(event) {
-// >>>>>>> ab0e275... dashboards changed, getting integrated with backend
-//     var that = this
-//     let id = event.currentTarget.dataset.ass_id
 
-//     wx.navigateTo({
-//         url: `../lesson/lesson?lesson=${id}`  //
-//       })
-// <<<<<<< HEAD
-// =======
-//   },
+  toLessons: function(event) {
 
-//   getUserInfo: function(e) {
-//     console.log(e)
-//     app.globalData.userInfo = e.detail.userInfo
-//     this.setData({
-//       userInfo: e.detail.userInfo,
-//       hasUserInfo: true,
-//     })
-// >>>>>>> ab0e275... dashboards changed, getting integrated with backend
-//   },
+  // The line below was causing merge conflict
+  // not sure which is the right function
+
+  // toAssignments: function(event) {
+
+    var that = this
+    let id = event.currentTarget.dataset.ass_id
+
+    wx.navigateTo({
+        url: `../lesson/lesson?lesson=${id}`  //
+      })
+
+  },
+
+  getUserInfo: function(e) {
+    console.log(e)
+    app.globalData.userInfo = e.detail.userInfo
+    this.setData({
+      userInfo: e.detail.userInfo,
+      hasUserInfo: true,
+    })
+
+  },
 })

@@ -13,15 +13,11 @@
   <view class="avatar-container">
   <!--code the avatars that bring in the avatars of the various students assigned to a particular teacher  -->
     <block  wx:for="{{students}}" wx:for-item="element" wx:key="index">
-<!-- Merge conflict begins below -->
-<!--        <image src="{{element.src}}" class="studentAvatar" bindtap='studentAvatar' id="{{element.id}}"></image>
 
-=======
-       <image src="{{element.src}}" class="studentAvatar" bindtap='studentAvatar' bindtap='navProfile' id="{{element.id}}"></image>
->>>>>>> d9a26fb... progress on lesson form and deleted assignment
-=======
-       <image src="{{element.src}}" class="studentAvatar" bindtap='navProfile' id="{{element.id}}"></image>
->>>>>>> ab0e275... dashboards changed, getting integrated with backend
+       <image src="{{element.src}}" class="studentAvatar" bindtap='studentAvatar' id="{{element.id}}"></image>
+
+
+
     </block>
   </view>
 
@@ -31,9 +27,6 @@
     <!--Need to code a color to overide the button which holds the
     current day's assignment.  -->
     <ul class="list-inline lessons hidden-sm hidden-xs">
-<<<<<<< HEAD
-<<<<<<< HEAD
-
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row1' data-ass_id='1'>1</button></li>
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row2' data-ass_id='2'>2</button></li>
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row3' data-ass_id='3'>3</button></li>
@@ -41,14 +34,6 @@
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row5' data-ass_id='5'>5</button></li>
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row6' data-ass-id='6'>6</button></li>
 
-=======
-      <li><navigator bindtap='toLesson' url="/pages/form/form" class="btn-assignments" id='row1'>1</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row2'>2</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row3'>3</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row4'>4</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row5'>5</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/form/form" class="btn-assignments" id='row6'>6</navigator></li>
->>>>>>> d9a26fb... progress on lesson form and deleted assignment
     </ul>
     <ul class="list-inline lessons hidden-sm hidden-xs">
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row1' data-ass_id='7'>7</button></li>
@@ -57,22 +42,7 @@
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row4' data-ass_id='10'>10</button></li>
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row5' data-ass_id='11'>11</button></li>
       <li><button bindtap='toLessons' url="/pages/lesson/lesson" class="btn-assignments" id='row6' data-ass_id='12'>12</button></li>
-=======
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row1' data-ass_id='1'>1</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row2' data-ass_id='2'>2</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row3' data-ass_id='3'>3</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row4' data-ass_id='4'>4</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row5' data-ass_id='5'>5</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row6' data-ass-id='6'>6</navigator></li>
-    </ul>
-    <ul class="list-inline lessons hidden-sm hidden-xs">
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row1' data-ass_id='7'>7</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row2' data-ass_id='8'>8</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row3' data-ass_id='9'>9</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row4' data-ass_id='10'>10</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row5' data-ass_id='11'>11</navigator></li>
-      <li><navigator bindtap='toAssignments' url="/pages/lesson/lesson" class="btn-assignments" id='row6' data-ass_id='12'>12</navigator></li> -->
->>>>>>> ab0e275... dashboards changed, getting integrated with backend
+
     </ul>
   </view>
 </view>

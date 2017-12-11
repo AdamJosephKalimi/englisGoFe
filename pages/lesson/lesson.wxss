@@ -102,8 +102,16 @@
   /* height: 150px; */
   padding: 10px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
+=======
+}
+
+.go{
+
+}
+>>>>>>> 31abe31... completed lesson - still needs touching-up
 
 .submit-btn {
   color: #656565;
@@ -115,6 +123,7 @@
   font-family: AvenirNext-Regular;
   font-weight: lighter;
   opacity: 0.8;
+<<<<<<< HEAD
 }
 
 #lesson_img {
@@ -127,4 +136,6 @@
   font-size: 12px;
 =======
 >>>>>>> d9a26fb... progress on lesson form and deleted assignment
+=======
+>>>>>>> 31abe31... completed lesson - still needs touching-up
 }

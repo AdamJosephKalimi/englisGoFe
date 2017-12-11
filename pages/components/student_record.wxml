@@ -19,14 +19,18 @@
 =======
     <button bindtap="buttonClicked" class='record_btn_1'>
       
-      <view wx:if="{{!is_recording}}"> start</view>
-      <view wx:elif="{{is_recording}}"> stop</view>    
-      
+      <image class='go' style="width: 35px; height: 35px;" src="../../image/speaker.png"/>
+
     </button>
   </view>
   <view class='warning'>
+<<<<<<< HEAD
     <text>There is a 3 minute time limit</text>
     <text>有3分钟的时间限制</text>
 >>>>>>> d9a26fb... progress on lesson form and deleted assignment
+=======
+    <text>There is a 1 minute time limit</text>
+    <text>有1分钟的时间限制</text>
+>>>>>>> 31abe31... completed lesson - still needs touching-up
   </view>
 </view>

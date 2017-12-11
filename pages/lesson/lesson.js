@@ -119,34 +119,34 @@ Page({
 
 ////////////////////////////////////////////////////
 
-//   setQiniu: function () {
+  setQiniu: function () {
 
-//   uploadVoice: function() {
-//     var that = this
-//     var domain = app.globalData.prod_domain
+  uploadVoice: function() {
+    var that = this
+    var domain = app.globalData.prod_domain
 
-//     wx.request({
-//       url: `${domain}/api/v1/file_upload`,
-//       data: {
-//         user_open_id: app.globalData.open_id,
-//         user_token: app.globalData.authentication_token
-//       },
-//       success: function (res) {
-//         // res contains all the HTTP request data
-//         console.log('success!' + res.statusCode);
-//         console.log(res.data);
-//         // Update local data storage
-//         let qiniu = res.data
-//         that.setData({
-//           qiniuUpToken: qiniu.token,
-//           qiniuKey: qiniu.key
-//         })
-//         that.initQiniu();
-//       },
-//       fail: function (res) {
-//         console.log('failed!' + res.statusCode);
-//       },
-//     })
+    wx.request({
+      url: `${domain}/api/v1/file_upload`,
+      data: {
+        user_open_id: app.globalData.open_id,
+        user_token: app.globalData.authentication_token
+      },
+      success: function (res) {
+        // res contains all the HTTP request data
+        console.log('success!' + res.statusCode);
+        console.log(res.data);
+        // Update local data storage
+        let qiniu = res.data
+        that.setData({
+          qiniuUpToken: qiniu.token,
+          qiniuKey: qiniu.key
+        })
+        that.initQiniu();
+      },
+      fail: function (res) {
+        console.log('failed!' + res.statusCode);
+      },
+    })
 // =======
 //     qiniuUploader.upload(filePath, (res) => {
 //       console.log(res);
@@ -191,7 +191,7 @@ Page({
 //       }
 //     })
 // >>>>>>> d9a26fb... progress on lesson form and deleted assignment
-//   },
+  },
 
   onLoad: function (options) {
     console.log("global data setting!!! ")
